@@ -1,0 +1,15 @@
+{
+  "entities": [
+    "Waystone Inn"
+  ],
+  "edges": [
+    "lay in"
+  ],
+  "relations": [
+    [
+      "Waystone Inn",
+      "lay in",
+      "Waystone Inn"
+    ]
+  ]
+}

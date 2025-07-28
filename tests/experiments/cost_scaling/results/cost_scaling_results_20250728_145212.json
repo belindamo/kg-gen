@@ -1,0 +1,253 @@
+{
+  "experiment_config": {
+    "model": "gemini/gemini-2.0-flash",
+    "corpus_sizes": [
+      100,
+      1000,
+      10000,
+      100000,
+      1000000
+    ],
+    "timestamp": "2025-07-28 14:51:44"
+  },
+  "results": {
+    "100": {
+      "corpus_size": 100,
+      "corpus_length": 100,
+      "steps_1_and_2_kg_generation": {
+        "entities_count": 1,
+        "relations_count": 1,
+        "edge_count": 1,
+        "metrics": {
+          "execution_time": 1.2719800472259521,
+          "prompt_tokens": 664,
+          "completion_tokens": 54,
+          "total_tokens": 718,
+          "total_cost": 8.8e-05,
+          "history_entries": 2
+        }
+      },
+      "step_3_resolution": {
+        "metrics": {
+          "execution_time": 4.3727030754089355,
+          "total_tokens": 676,
+          "total_cost": 8.319999999999999e-05,
+          "history_entries": 2,
+          "prompt_tokens": 624,
+          "completion_tokens": 52,
+          "pre_dedup_entities": 1,
+          "pre_dedup_relations": 1,
+          "pre_dedup_edges": 1,
+          "final_entities": 1,
+          "final_edges": 1,
+          "final_relations": 1,
+          "deduplication_ratio_entities": 1.0,
+          "deduplication_ratio_relations": 1.0,
+          "deduplication_ratio_edges": 1.0
+        }
+      },
+      "knowledge_graph": {
+        "pre_dedup": {
+          "entities": [
+            "Waystone Inn"
+          ],
+          "relations": [
+            {
+              "subject": "Waystone Inn",
+              "predicate": "lay in",
+              "object": "Waystone Inn"
+            }
+          ],
+          "edges": [
+            "lay in"
+          ],
+          "entity_count": 1,
+          "relation_count": 1,
+          "edge_count": 1
+        },
+        "post_dedup": {
+          "entity_count": 1,
+          "relation_count": 1,
+          "edge_count": 1,
+          "deduplication_ratios": {
+            "entities": 1.0,
+            "relations": 1.0,
+            "edges": 1.0
+          }
+        }
+      },
+      "corpus_sample": "\nPROLOGUE\n\nA Silence of Three Parts\n\nIT WAS NIGHT AGAIN. The Waystone Inn lay in silence, and it was",
+      "corpus_file": "corpus_texts/corpus_100_chars.txt",
+      "total_metrics": {
+        "prompt_tokens": 1288,
+        "completion_tokens": 106,
+        "total_tokens": 1394,
+        "total_cost": 0.0001712,
+        "total_time": 5.644683122634888,
+        "final_entity_count": 1,
+        "final_relation_count": 1,
+        "final_edge_count": 1
+      }
+    },
+    "1000": {
+      "corpus_size": 1000,
+      "corpus_length": 1000,
+      "steps_1_and_2_kg_generation": {
+        "entities_count": 20,
+        "relations_count": 12,
+        "edge_count": 9,
+        "metrics": {
+          "execution_time": 5.366513013839722,
+          "prompt_tokens": 2090,
+          "completion_tokens": 788,
+          "total_tokens": 2878,
+          "total_cost": 0.0005242,
+          "history_entries": 3
+        }
+      },
+      "step_3_resolution": {
+        "metrics": {
+          "execution_time": 14.147791862487793,
+          "total_tokens": 10232,
+          "total_cost": 0.0012227,
+          "history_entries": 27,
+          "prompt_tokens": 9567,
+          "completion_tokens": 665,
+          "pre_dedup_entities": 20,
+          "pre_dedup_relations": 12,
+          "pre_dedup_edges": 9,
+          "final_entities": 18,
+          "final_edges": 9,
+          "final_relations": 12,
+          "deduplication_ratio_entities": 0.9,
+          "deduplication_ratio_relations": 1.0,
+          "deduplication_ratio_edges": 1.0
+        }
+      },
+      "knowledge_graph": {
+        "pre_dedup": {
+          "entities": [
+            "wind",
+            "inn",
+            "hooks",
+            "Waystone Inn",
+            "laughter",
+            "clamor",
+            "conversation",
+            "Waystone",
+            "news",
+            "crowd",
+            "men",
+            "inn\u2019s sign",
+            "bar",
+            "autumn leaves",
+            "clatter",
+            "music",
+            "night",
+            "road",
+            "drinking house",
+            "trees"
+          ],
+          "relations": [
+            {
+              "subject": "crowd",
+              "predicate": "filled",
+              "object": "laughter"
+            },
+            {
+              "subject": "wind",
+              "predicate": "sighs through",
+              "object": "trees"
+            },
+            {
+              "subject": "crowd",
+              "predicate": "filled",
+              "object": "clatter"
+            },
+            {
+              "subject": "road",
+              "predicate": "covered in",
+              "object": "autumn leaves"
+            },
+            {
+              "subject": "Waystone Inn",
+              "predicate": "is",
+              "object": "inn"
+            },
+            {
+              "subject": "wind",
+              "predicate": "brushed",
+              "object": "road"
+            },
+            {
+              "subject": "inn\u2019s sign",
+              "predicate": "creaking on",
+              "object": "hooks"
+            },
+            {
+              "subject": "men",
+              "predicate": "avoiding",
+              "object": "news"
+            },
+            {
+              "subject": "Waystone",
+              "predicate": "inside",
+              "object": "bar"
+            },
+            {
+              "subject": "drinking house",
+              "predicate": "during",
+              "object": "night"
+            },
+            {
+              "subject": "crowd",
+              "predicate": "filled",
+              "object": "clamor"
+            },
+            {
+              "subject": "crowd",
+              "predicate": "filled",
+              "object": "conversation"
+            }
+          ],
+          "edges": [
+            "filled",
+            "creaking on",
+            "inside",
+            "is",
+            "during",
+            "brushed",
+            "covered in",
+            "sighs through",
+            "avoiding"
+          ],
+          "entity_count": 20,
+          "relation_count": 12,
+          "edge_count": 9
+        },
+        "post_dedup": {
+          "entity_count": 18,
+          "relation_count": 12,
+          "edge_count": 9,
+          "deduplication_ratios": {
+            "entities": 0.9,
+            "relations": 1.0,
+            "edges": 1.0
+          }
+        }
+      },
+      "corpus_sample": "\nPROLOGUE\n\nA Silence of Three Parts\n\nIT WAS NIGHT AGAIN. The Waystone Inn lay in silence, and it was a silence of three parts.\n\nThe most obvious part was a hollow, echoing quiet, made by things that w...",
+      "corpus_file": "corpus_texts/corpus_1000_chars.txt",
+      "total_metrics": {
+        "prompt_tokens": 11657,
+        "completion_tokens": 1453,
+        "total_tokens": 13110,
+        "total_cost": 0.0017469,
+        "total_time": 19.514304876327515,
+        "final_entity_count": 20,
+        "final_relation_count": 12,
+        "final_edge_count": 9
+      }
+    }
+  }
+}

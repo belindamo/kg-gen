@@ -1,0 +1,93 @@
+{
+  "experiment_config": {
+    "model": "gemini/gemini-2.0-flash",
+    "corpus_sizes": [
+      100,
+      1000,
+      10000,
+      100000,
+      1000000
+    ],
+    "timestamp": "2025-07-28 14:51:44"
+  },
+  "results": {
+    "100": {
+      "corpus_size": 100,
+      "corpus_length": 100,
+      "steps_1_and_2_kg_generation": {
+        "entities_count": 1,
+        "relations_count": 1,
+        "edge_count": 1,
+        "metrics": {
+          "execution_time": 1.2719800472259521,
+          "prompt_tokens": 664,
+          "completion_tokens": 54,
+          "total_tokens": 718,
+          "total_cost": 8.8e-05,
+          "history_entries": 2
+        }
+      },
+      "step_3_resolution": {
+        "metrics": {
+          "execution_time": 4.3727030754089355,
+          "total_tokens": 676,
+          "total_cost": 8.319999999999999e-05,
+          "history_entries": 2,
+          "prompt_tokens": 624,
+          "completion_tokens": 52,
+          "pre_dedup_entities": 1,
+          "pre_dedup_relations": 1,
+          "pre_dedup_edges": 1,
+          "final_entities": 1,
+          "final_edges": 1,
+          "final_relations": 1,
+          "deduplication_ratio_entities": 1.0,
+          "deduplication_ratio_relations": 1.0,
+          "deduplication_ratio_edges": 1.0
+        }
+      },
+      "knowledge_graph": {
+        "pre_dedup": {
+          "entities": [
+            "Waystone Inn"
+          ],
+          "relations": [
+            {
+              "subject": "Waystone Inn",
+              "predicate": "lay in",
+              "object": "Waystone Inn"
+            }
+          ],
+          "edges": [
+            "lay in"
+          ],
+          "entity_count": 1,
+          "relation_count": 1,
+          "edge_count": 1
+        },
+        "post_dedup": {
+          "entity_count": 1,
+          "relation_count": 1,
+          "edge_count": 1,
+          "deduplication_ratios": {
+            "entities": 1.0,
+            "relations": 1.0,
+            "edges": 1.0
+          }
+        }
+      },
+      "corpus_sample": "\nPROLOGUE\n\nA Silence of Three Parts\n\nIT WAS NIGHT AGAIN. The Waystone Inn lay in silence, and it was",
+      "corpus_file": "corpus_texts/corpus_100_chars.txt",
+      "total_metrics": {
+        "prompt_tokens": 1288,
+        "completion_tokens": 106,
+        "total_tokens": 1394,
+        "total_cost": 0.0001712,
+        "total_time": 5.644683122634888,
+        "final_entity_count": 1,
+        "final_relation_count": 1,
+        "final_edge_count": 1
+      }
+    }
+  }
+}

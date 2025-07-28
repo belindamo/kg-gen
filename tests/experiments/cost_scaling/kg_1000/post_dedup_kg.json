@@ -1,0 +1,182 @@
+{
+  "entities": [
+    "wind",
+    "news",
+    "Waystone",
+    "conversation",
+    "road",
+    "men",
+    "crowd",
+    "inn",
+    "bar",
+    "trees",
+    "autumn leaves",
+    "clatter",
+    "hooks",
+    "laughter",
+    "clamor",
+    "music",
+    "night",
+    "Waystone Inn"
+  ],
+  "edges": [
+    "inside",
+    "creaking on",
+    "filled",
+    "is",
+    "during",
+    "brushed",
+    "covered in",
+    "sighs through",
+    "avoiding"
+  ],
+  "relations": [
+    [
+      "crowd",
+      "filled",
+      "laughter"
+    ],
+    [
+      "wind",
+      "sighs through",
+      "trees"
+    ],
+    [
+      "crowd",
+      "filled",
+      "clatter"
+    ],
+    [
+      "road",
+      "covered in",
+      "autumn leaves"
+    ],
+    [
+      "Waystone Inn",
+      "is",
+      "inn"
+    ],
+    [
+      "wind",
+      "brushed",
+      "road"
+    ],
+    [
+      "inn\u2019s sign",
+      "creaking on",
+      "hooks"
+    ],
+    [
+      "bar",
+      "during",
+      "night"
+    ],
+    [
+      "men",
+      "avoiding",
+      "news"
+    ],
+    [
+      "Waystone",
+      "inside",
+      "bar"
+    ],
+    [
+      "crowd",
+      "filled",
+      "clamor"
+    ],
+    [
+      "crowd",
+      "filled",
+      "conversation"
+    ]
+  ],
+  "entity_clusters": {
+    "trees": [
+      "trees"
+    ],
+    "bar": [
+      "inn",
+      "bar",
+      "drinking house"
+    ],
+    "road": [
+      "road"
+    ],
+    "night": [
+      "night"
+    ],
+    "music": [
+      "music"
+    ],
+    "clatter": [
+      "clatter"
+    ],
+    "autumn leaves": [
+      "autumn leaves"
+    ],
+    "inn\u2019s sign": [
+      "inn\u2019s sign"
+    ],
+    "men": [
+      "men"
+    ],
+    "crowd": [
+      "crowd"
+    ],
+    "news": [
+      "news"
+    ],
+    "Waystone": [
+      "Waystone"
+    ],
+    "conversation": [
+      "conversation"
+    ],
+    "clamor": [
+      "clamor"
+    ],
+    "laughter": [
+      "laughter"
+    ],
+    "Waystone Inn": [
+      "Waystone Inn"
+    ],
+    "hooks": [
+      "hooks"
+    ],
+    "wind": [
+      "wind"
+    ]
+  },
+  "edge_clusters": {
+    "avoiding": [
+      "avoiding"
+    ],
+    "sighs through": [
+      "sighs through"
+    ],
+    "covered in": [
+      "covered in"
+    ],
+    "brushed": [
+      "brushed"
+    ],
+    "during": [
+      "during"
+    ],
+    "is": [
+      "is"
+    ],
+    "inside": [
+      "inside"
+    ],
+    "creaking on": [
+      "creaking on"
+    ],
+    "filled": [
+      "filled"
+    ]
+  }
+}

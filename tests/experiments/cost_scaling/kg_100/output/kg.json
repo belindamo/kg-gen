@@ -1,0 +1,28 @@
+{
+  "entities": [
+    "Waystone Inn"
+  ],
+  "edges": [
+    "lay in"
+  ],
+  "relations": [
+    [
+      "Waystone Inn",
+      "lay in",
+      "Waystone Inn"
+    ]
+  ],
+  "entity_clusters": {
+    "Waystone Inn": [
+      "Waystone Inn"
+    ]
+  },
+  "edge_clusters": {
+    "lay in": [
+      "lay in"
+    ]
+  },
+  "entities_chunk_ids": null,
+  "relations_chunk_ids": null,
+  "edges_chunk_ids": null
+}

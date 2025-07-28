@@ -18,10 +18,11 @@ from pathlib import Path
 from src.kg_gen import Graph
 import dspy
 from concurrent.futures import ThreadPoolExecutor
-import faiss
 import numpy as np
 from scipy.spatial.distance import cdist
 import time
+from sklearn.cluster import KMeans
+import warnings
 
 
 # Set up logging safely
@@ -75,6 +76,9 @@ class KGAssistedRAG:
             np.save(node_embeddings_cache_path, self.node_embeddings)
             print(f"Saved node embeddings to cache: {node_embeddings_cache_path}")
             
+        # Validate and sanitize node embeddings
+        self.node_embeddings = self._sanitize_embeddings(self.node_embeddings, "node")
+        
         # Check if cached BM25 tokens for nodes exist
         if os.path.exists(node_bm25_tokens_cache_path):
             print(f"Loading node BM25 tokens from cache: {node_bm25_tokens_cache_path}")
@@ -109,6 +113,9 @@ class KGAssistedRAG:
             np.save(edge_embeddings_cache_path, self.edge_embeddings)
             print(f"Saved edge embeddings to cache: {edge_embeddings_cache_path}")
             
+        # Validate and sanitize edge embeddings
+        self.edge_embeddings = self._sanitize_embeddings(self.edge_embeddings, "edge")
+        
         # Check if cached BM25 tokens for edges exist
         if os.path.exists(edge_bm25_tokens_cache_path):
             print(f"Loading edge BM25 tokens from cache: {edge_bm25_tokens_cache_path}")
@@ -124,7 +131,50 @@ class KGAssistedRAG:
                 
         # Always rebuild BM25 from tokens
         self.edge_bm25 = BM25Okapi(self.edge_bm25_tokenized)
-  
+
+    def _sanitize_embeddings(self, embeddings: np.ndarray, embedding_type: str) -> np.ndarray:
+        """
+        Validate and sanitize embeddings to prevent numerical issues in matrix operations.
+        """
+        print(f"Validating {embedding_type} embeddings...")
+        
+        # Check for NaN values
+        nan_mask = np.isnan(embeddings)
+        if nan_mask.any():
+            nan_count = nan_mask.sum()
+            print(f"⚠️  Found {nan_count} NaN values in {embedding_type} embeddings, replacing with zeros")
+            embeddings = np.nan_to_num(embeddings, nan=0.0)
+        
+        # Check for infinite values
+        inf_mask = np.isinf(embeddings)
+        if inf_mask.any():
+            inf_count = inf_mask.sum()
+            print(f"⚠️  Found {inf_count} infinite values in {embedding_type} embeddings, clipping to finite range")
+            embeddings = np.nan_to_num(embeddings, posinf=1e10, neginf=-1e10)
+        
+        # Check for extreme values that might cause overflow
+        max_val = np.max(np.abs(embeddings))
+        if max_val > 1e10:
+            print(f"⚠️  Found extreme values in {embedding_type} embeddings (max: {max_val}), clipping to reasonable range")
+            embeddings = np.clip(embeddings, -1e10, 1e10)
+        
+        # Normalize embeddings to prevent scaling issues
+        norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
+        zero_norm_mask = norms.flatten() == 0
+        if zero_norm_mask.any():
+            zero_count = zero_norm_mask.sum()
+            print(f"⚠️  Found {zero_count} zero-norm embeddings in {embedding_type}, replacing with small random values")
+            # Replace zero-norm embeddings with small random values
+            embeddings[zero_norm_mask] = np.random.normal(0, 1e-8, (zero_count, embeddings.shape[1]))
+            # Recalculate norms
+            norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
+        
+        # Normalize all embeddings
+        embeddings = embeddings / norms
+        
+        print(f"✓ {embedding_type.capitalize()} embeddings validated and sanitized")
+        return embeddings.astype(np.float32)
+
     def get_relevant_items(self, query: str, top_k: int = 50, type: str = "node") -> list[str]:
         """
         Use rank fusion of BM25 + embedding to retrieve top-k nodes.
@@ -137,8 +187,29 @@ class KGAssistedRAG:
         # Embedding
         encoder = self.node_encoder if type == "node" else self.edge_encoder
         query_embedding = encoder.encode([query], show_progress_bar=False)
+        
+        # Sanitize query embedding
+        query_embedding = self._sanitize_embeddings(query_embedding, f"query_{type}")
+        
         embeddings = self.node_embeddings if type == "node" else self.edge_embeddings
-        embedding_scores = cosine_similarity(query_embedding, embeddings).flatten()
+        
+        # Use safer cosine similarity calculation with error handling
+        try:
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore", RuntimeWarning)
+                embedding_scores = cosine_similarity(query_embedding, embeddings).flatten()
+                
+            # Check for problematic similarity scores
+            if np.isnan(embedding_scores).any() or np.isinf(embedding_scores).any():
+                print(f"⚠️  Found problematic similarity scores for {type}, using fallback")
+                embedding_scores = np.zeros(len(embeddings))
+                
+        except Exception as e:
+            print(f"⚠️  Error computing cosine similarity for {type}: {e}, using fallback")
+            embedding_scores = np.zeros(len(embeddings))
+
+        # Ensure BM25 scores are finite
+        bm25_scores = np.nan_to_num(bm25_scores, nan=0.0, posinf=0.0, neginf=0.0)
 
         # Rank fusion (equal weighting)
         combined_scores = 0.5 * bm25_scores + 0.5 * embedding_scores
@@ -174,17 +245,33 @@ class KGAssistedRAG:
                     with open(edge_clusters_path, 'r') as f:
                         self.edge_clusters = json.load(f)
                     continue
-            # Step 1: Cluster centers with FAISS
+            # Step 1: Cluster centers with sklearn KMeans
             d = embeddings.shape[1]
-            num_clusters = len(embeddings) // cluster_size
-
-            kmeans = faiss.Kmeans(d, num_clusters, niter=20, verbose=True, gpu=True)
-            kmeans.train(embeddings.astype(np.float32))
-            centroids = kmeans.centroids
+            num_clusters = max(1, len(embeddings) // cluster_size)  # Ensure at least 1 cluster
+            
+            print(f"Clustering {len(embeddings)} points in {d}D to {num_clusters} clusters...")
+            
+            # Use sklearn KMeans - more stable than FAISS
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore", RuntimeWarning)
+                kmeans = KMeans(n_clusters=num_clusters, n_init=3, max_iter=20, random_state=123, verbose=1)
+                kmeans.fit(embeddings.astype(np.float32))
+                centroids = kmeans.cluster_centers_
 
             # Step 2: Assign each point to nearest centroid (with 25 max per cluster)
-            distances = cdist(embeddings, centroids)  # (300000, num_clusters)
-            assignments = np.argsort(distances, axis=1)
+            try:
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore", RuntimeWarning)
+                    distances = cdist(embeddings, centroids)  # (300000, num_clusters)
+                    
+                # Sanitize distances
+                distances = np.nan_to_num(distances, nan=1e10, posinf=1e10, neginf=1e10)
+                assignments = np.argsort(distances, axis=1)
+                
+            except Exception as e:
+                print(f"⚠️  Error computing distances for {embedding_type}: {e}, using fallback clustering")
+                # Fallback: assign points randomly to clusters
+                assignments = np.random.randint(0, num_clusters, (len(embeddings), num_clusters))
 
             # Initialize cluster tracking
             clusters = [[] for _ in range(num_clusters)]
@@ -295,9 +382,13 @@ class KGAssistedRAG:
         
         return items, item_clusters
 
-    def deduplicate(self) -> Graph:
+    def deduplicate(self) -> tuple[Graph, dict]:
         lm = dspy.LM(model="gemini/gemini-2.0-flash", api_key=os.getenv("GOOGLE_API_KEY"))
         dspy.configure(lm=lm)
+        
+        # Clear LM history to track only deduplication tokens
+        if hasattr(lm, 'history'):
+            lm.history.clear()
         
         # Check if intermediate progress exists and load it
         progress_path = os.path.join(self.output_folder, "dedup_progress.json")
@@ -439,8 +530,61 @@ class KGAssistedRAG:
             }, f, indent=2)
         logger.info(f"Saved deduplicated knowledge graph to {output_path}")
 
-        return deduped_kg
+        # Extract token usage metrics from deduplication LM history
+        dedup_metrics = self._extract_token_metrics(lm)
+        
+        return deduped_kg, dedup_metrics
             
+    def _extract_token_metrics(self, lm) -> dict:
+        """Extract token usage metrics from dspy LM history."""
+        prompt_tokens = 0
+        completion_tokens = 0
+        total_tokens = 0
+        total_cost = 0.0
+        history_entries = 0
+        
+        try:
+            if hasattr(lm, 'history'):
+                history = lm.history
+                history_entries = len(history)
+                
+                for entry in history:
+                    if isinstance(entry, dict):
+                        # Extract usage information from multiple possible locations
+                        found_usage = False
+                        
+                        # Try 1: Direct usage field (dict)
+                        if 'usage' in entry and isinstance(entry['usage'], dict) and entry['usage']:
+                            usage = entry['usage']
+                            prompt_tokens += usage.get('prompt_tokens', 0)
+                            completion_tokens += usage.get('completion_tokens', 0)
+                            total_tokens += usage.get('total_tokens', 0)
+                            found_usage = True
+                        
+                        # Try 2: Usage in response object  
+                        if not found_usage and 'response' in entry and hasattr(entry['response'], 'usage'):
+                            response_usage = entry['response'].usage
+                            if hasattr(response_usage, 'prompt_tokens') and response_usage.prompt_tokens:
+                                prompt_tokens += response_usage.prompt_tokens
+                                completion_tokens += response_usage.completion_tokens
+                                total_tokens += response_usage.total_tokens
+                                found_usage = True
+                        
+                        # Extract cost
+                        if 'cost' in entry:
+                            total_cost += entry['cost']
+                            
+        except Exception as e:
+            print(f"Warning: Could not extract deduplication metrics: {e}")
+        
+        return {
+            'prompt_tokens': prompt_tokens,
+            'completion_tokens': completion_tokens,
+            'total_tokens': total_tokens,
+            'total_cost': total_cost,
+            'history_entries': history_entries
+        }
+
     def _save_intermediate_progress(self, entities, edges, entity_clusters, edge_clusters):
         """Save intermediate progress during deduplication"""
         try:
