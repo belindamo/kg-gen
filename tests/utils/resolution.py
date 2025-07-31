@@ -3,6 +3,10 @@ import os
 # Add the project root to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 
+# Force PyTorch to use CPU to avoid device conflicts in multi-threading
+os.environ['CUDA_VISIBLE_DEVICES'] = ''
+os.environ['PYTORCH_ENABLE_MPS_FALLBACK'] = '1'
+
 import json
 import os
 from typing import Tuple
@@ -23,7 +27,11 @@ from scipy.spatial.distance import cdist
 import time
 from sklearn.cluster import KMeans
 import warnings
+import threading
 
+
+# Global lock for thread-safe model loading
+model_loading_lock = threading.Lock()
 
 # Set up logging safely
 logger = logging.getLogger('kg_rag')
@@ -59,7 +67,23 @@ class KGAssistedRAG:
         os.makedirs(self.output_folder, exist_ok=True)
         
         # Cache embeddings and BM25 tokens for nodes
-        self.node_encoder = SentenceTransformer('sentence-transformers/all-mpnet-base-v2')
+        # Force CPU usage to avoid device conflicts in multi-threading
+        import torch
+        device = 'cpu'
+        
+        # Use thread lock to prevent concurrent model loading issues
+        with model_loading_lock:
+            # Add retry logic for model loading
+            max_retries = 3
+            for attempt in range(max_retries):
+                try:
+                    self.node_encoder = SentenceTransformer('sentence-transformers/all-mpnet-base-v2', device=device)
+                    break
+                except Exception as e:
+                    if attempt == max_retries - 1:
+                        raise e
+                    print(f"Attempt {attempt + 1} failed to load node encoder: {e}")
+                    time.sleep(1)  # Wait before retry
         
         # Define cache file paths for nodes
         node_embeddings_cache_path = os.path.join(self.output_folder, "node_embeddings.npy")
@@ -96,7 +120,19 @@ class KGAssistedRAG:
         self.node_bm25 = BM25Okapi(self.node_bm25_tokenized)
         
         # Cache embeddings and BM25 tokens for edges
-        self.edge_encoder = SentenceTransformer('sentence-transformers/all-mpnet-base-v2')
+        # Use the same device as node encoder to avoid conflicts
+        with model_loading_lock:
+            # Add retry logic for model loading
+            max_retries = 3
+            for attempt in range(max_retries):
+                try:
+                    self.edge_encoder = SentenceTransformer('sentence-transformers/all-mpnet-base-v2', device=device)
+                    break
+                except Exception as e:
+                    if attempt == max_retries - 1:
+                        raise e
+                    print(f"Attempt {attempt + 1} failed to load edge encoder: {e}")
+                    time.sleep(1)  # Wait before retry
         
         # Define cache file paths for edges
         edge_embeddings_cache_path = os.path.join(self.output_folder, "edge_embeddings.npy")
@@ -382,8 +418,15 @@ class KGAssistedRAG:
         
         return items, item_clusters
 
-    def deduplicate(self) -> tuple[Graph, dict]:
-        lm = dspy.LM(model="gemini/gemini-2.0-flash", api_key=os.getenv("GOOGLE_API_KEY"))
+    def deduplicate(self, model_config: dict = None) -> tuple[Graph, dict]:
+        # Default to gemini if no model config provided
+        if model_config is None:
+            model_config = {
+                "model": "gemini/gemini-2.0-flash", 
+                "api_key": os.getenv("GOOGLE_API_KEY")
+            }
+        
+        lm = dspy.LM(model=model_config["model"], api_key=model_config["api_key"])
         dspy.configure(lm=lm)
         
         # Clear LM history to track only deduplication tokens
@@ -420,7 +463,8 @@ class KGAssistedRAG:
                 entity_clusters = {}
                 edge_clusters = {}
         
-        pool = ThreadPoolExecutor(max_workers=64)
+        # Reduce max workers to avoid overwhelming the system when running multiple main threads
+        pool = ThreadPoolExecutor(max_workers=8)
         
         # Process node clusters in parallel
         node_futures = []
@@ -608,51 +652,68 @@ class KGAssistedRAG:
             print(f"Error saving intermediate progress: {e}")
     
     
-if __name__ == "__main__":
+def process_single_file(kg_path: str) -> None:
+    """Process a single KG file with clustering and deduplication"""
+    print(f'Processing path: {kg_path}')
     
-    # Set paths
-    kg_paths = [
-        # "tests/data/wiki_qa/aggregated/articles_1_kg.json",
-        # "tests/data/wiki_qa/aggregated/articles_40k_ch_kg.json",
-        # "tests/data/wiki_qa/aggregated/articles_400k_ch_kg.json",
-        "tests/data/wiki_qa/aggregated/articles_4m_ch_kg.json",
-        # "tests/data/wiki_qa/aggregated/articles_20m_ch_kg.json",
-        # "tests/data/wiki_qa/aggregated/articles_all_kg.json",
-        # "tests/data/wiki_qa/aggregated/articles_w_context_kg.json",
-    ]
+    # Determine and display model that will be used
+    model_name = "gemini"  # default
+    if "4o" in kg_path:
+        model_name = "gpt-4o"
+    elif "gemini" in kg_path:
+        model_name = "gemini-2.0-flash"
+    elif "sonnet" in kg_path:
+        model_name = "claude-3-5-sonnet"
     
-    
-    for kg_path in kg_paths:
-        print('Path:', kg_path)
-        start_time = time.time()
+    print(f'Model: {model_name}')
+    start_time = time.time()
+
+    # Output to clustered/ directory for cluster_ablation files
+    if "cluster_ablation" in kg_path:
+        output_folder = kg_path.replace("tests/experiments/cluster_ablation/", "tests/experiments/cluster_ablation/clustered/")
+        output_folder = f"{output_folder}_deduplicated".replace(".json", "")
+    else:
         output_folder = f"{kg_path}_deduplicated".replace(".json", "")
+
+    # Check if deduplicated output already exists (skip if so)
+    dedup_json_path = os.path.join(output_folder, "kg.json")
+    if os.path.exists(dedup_json_path):
+        print(f"Deduplicated output already exists at {dedup_json_path}, skipping...")
+        return
+
+    try:
         # Initialize KGAssistedRAG with proper paths
         rag = KGAssistedRAG(
             kg_path=kg_path,
             output_folder=output_folder
         )
         
-        # Test query
-        test_query = "Winter Olympics"
-        
-        # Test get_relevant_nodes and edges
-        nodes = rag.get_relevant_items(test_query, 50, "node")
-        edges = rag.get_relevant_items(test_query, 50, "edge")
-        print(f"\nQuery: {test_query}")
-        print(f"\nRelevant Nodes:")
-        for n in nodes:
-            print(n)
-        print(f"\nRelevant Edges:")
-        for e in edges:
-            print(e)
-        
         rag.cluster()
         
-        rag.deduplicate()
+        # Determine model config based on file path
+        model_config = None
+        if "4o" in kg_path:
+            model_config = {
+                "model": "openai/gpt-4o", 
+                "api_key": os.getenv("OPENAI_API_KEY")
+            }
+        elif "gemini" in kg_path:
+            model_config = {
+                "model": "gemini/gemini-2.0-flash", 
+                "api_key": os.getenv("GOOGLE_API_KEY")
+            }
+        elif "sonnet" in kg_path:
+            model_config = {
+                "model": "anthropic/claude-4-sonnet", 
+                "api_key": os.getenv("ANTHROPIC_API_KEY")
+            }
+        
+        rag.deduplicate(model_config)
         
         end_time = time.time()
         elapsed_time = end_time - start_time
         print(f"\nProcessing time for {kg_path}: {elapsed_time:.2f} seconds ({elapsed_time/60:.2f} minutes)")
+        
         # Log processing time to a separate log file
         log_dir = Path("logs")
         log_dir.mkdir(exist_ok=True)
@@ -664,3 +725,80 @@ if __name__ == "__main__":
             f.write(f"{kg_name},{elapsed_time:.2f},{elapsed_time/60:.2f}\n")
         
         print(f"Processing time logged to {log_file}")
+        
+    except Exception as e:
+        print(f"Error processing {kg_path}: {e}")
+        import traceback
+        traceback.print_exc()
+
+
+if __name__ == "__main__":
+    print('DOES THIS WORK', os.getenv("ANTHROPIC_API_KEY"))
+    # Set paths - aggregated files
+    kg_paths = [
+        # "tests/data/wiki_qa/aggregated/articles_1_kg.json",
+        # "tests/data/wiki_qa/aggregated/articles_40k_ch_kg.json",
+        # "tests/data/wiki_qa/aggregated/articles_400k_ch_kg.json",
+        # "tests/data/wiki_qa/aggregated/articles_4m_ch_kg.json",
+        # "tests/data/wiki_qa/aggregated/articles_20m_ch_kg.json",
+        # "tests/data/wiki_qa/aggregated/articles_all_kg.json",
+        # "tests/data/wiki_qa/aggregated/articles_w_context_kg.json",
+        "tests/experiments/cluster_ablation/KGGEN_MINE_4o_aggregated.json",
+        "tests/experiments/cluster_ablation/KGGEN_MINE_gemini_aggregated.json",
+        "tests/experiments/cluster_ablation/KGGEN_MINE_sonnet_aggregated.json",
+    ]
+    
+    # Add all individual JSON files from the three directories  
+    base_dirs = [
+        "tests/experiments/cluster_ablation/KGGEN_MINE_4o/",
+        "tests/experiments/cluster_ablation/KGGEN_MINE_gemini/", 
+        "tests/experiments/cluster_ablation/KGGEN_MINE_sonnet/"
+    ]
+    for base_dir in base_dirs:
+        json_files = [os.path.join(base_dir, f) for f in os.listdir(base_dir) if f.endswith('.json')]
+        kg_paths.extend(json_files)
+    print(f"Total files to process: {len(kg_paths)}")
+    
+    # Group files by model type
+    model_groups = {
+        "4o": [],
+        "gemini": [],
+        "sonnet": []
+    }
+    
+    for path in kg_paths:
+        if "4o" in path:
+            model_groups["4o"].append(path)
+        elif "gemini" in path:
+            model_groups["gemini"].append(path)
+        elif "sonnet" in path:
+            model_groups["sonnet"].append(path)
+    
+    print(f"Files grouped by model:")
+    for model, files in model_groups.items():
+        print(f"  {model}: {len(files)} files")
+    
+    # Process files with 2 threads per model (6 total threads)
+    all_futures = []
+    with ThreadPoolExecutor(max_workers=6) as executor:
+        # Submit 2 threads worth of work for each model
+        for model, files in model_groups.items():
+            print(f"\nSubmitting {len(files)} {model} files for processing...")
+            for file_path in files:
+                future = executor.submit(process_single_file, file_path)
+                all_futures.append((model, file_path, future))
+        
+        print(f"\nStarted processing with 6 concurrent threads (2 per model)")
+        print("Waiting for all files to complete...")
+        
+        # Wait for all futures to complete and handle results
+        completed = 0
+        for model, file_path, future in all_futures:
+            try:
+                future.result()  # This will raise an exception if the task failed
+                completed += 1
+                print(f"✓ Completed {completed}/{len(all_futures)}: {file_path}")
+            except Exception as e:
+                print(f"✗ Failed {file_path}: {e}")
+    
+    print(f"\nAll processing complete! Processed {completed}/{len(all_futures)} files successfully.")

@@ -1,0 +1,866 @@
+{
+  "experiment_config": {
+    "model": "gemini/gemini-2.0-flash",
+    "corpus_sizes": [
+      100,
+      1000,
+      10000,
+      100000,
+      1000000
+    ],
+    "timestamp": "2025-07-28 14:51:44"
+  },
+  "results": {
+    "100": {
+      "corpus_size": 100,
+      "corpus_length": 100,
+      "steps_1_and_2_kg_generation": {
+        "entities_count": 1,
+        "relations_count": 1,
+        "edge_count": 1,
+        "metrics": {
+          "execution_time": 1.2719800472259521,
+          "prompt_tokens": 664,
+          "completion_tokens": 54,
+          "total_tokens": 718,
+          "total_cost": 8.8e-05,
+          "history_entries": 2
+        }
+      },
+      "step_3_resolution": {
+        "metrics": {
+          "execution_time": 4.3727030754089355,
+          "total_tokens": 676,
+          "total_cost": 8.319999999999999e-05,
+          "history_entries": 2,
+          "prompt_tokens": 624,
+          "completion_tokens": 52,
+          "pre_dedup_entities": 1,
+          "pre_dedup_relations": 1,
+          "pre_dedup_edges": 1,
+          "final_entities": 1,
+          "final_edges": 1,
+          "final_relations": 1,
+          "deduplication_ratio_entities": 1.0,
+          "deduplication_ratio_relations": 1.0,
+          "deduplication_ratio_edges": 1.0
+        }
+      },
+      "knowledge_graph": {
+        "pre_dedup": {
+          "entities": [
+            "Waystone Inn"
+          ],
+          "relations": [
+            {
+              "subject": "Waystone Inn",
+              "predicate": "lay in",
+              "object": "Waystone Inn"
+            }
+          ],
+          "edges": [
+            "lay in"
+          ],
+          "entity_count": 1,
+          "relation_count": 1,
+          "edge_count": 1
+        },
+        "post_dedup": {
+          "entity_count": 1,
+          "relation_count": 1,
+          "edge_count": 1,
+          "deduplication_ratios": {
+            "entities": 1.0,
+            "relations": 1.0,
+            "edges": 1.0
+          }
+        }
+      },
+      "corpus_sample": "\nPROLOGUE\n\nA Silence of Three Parts\n\nIT WAS NIGHT AGAIN. The Waystone Inn lay in silence, and it was",
+      "corpus_file": "corpus_texts/corpus_100_chars.txt",
+      "total_metrics": {
+        "prompt_tokens": 1288,
+        "completion_tokens": 106,
+        "total_tokens": 1394,
+        "total_cost": 0.0001712,
+        "total_time": 5.644683122634888,
+        "final_entity_count": 1,
+        "final_relation_count": 1,
+        "final_edge_count": 1
+      }
+    },
+    "1000": {
+      "corpus_size": 1000,
+      "corpus_length": 1000,
+      "steps_1_and_2_kg_generation": {
+        "entities_count": 20,
+        "relations_count": 12,
+        "edge_count": 9,
+        "metrics": {
+          "execution_time": 5.366513013839722,
+          "prompt_tokens": 2090,
+          "completion_tokens": 788,
+          "total_tokens": 2878,
+          "total_cost": 0.0005242,
+          "history_entries": 3
+        }
+      },
+      "step_3_resolution": {
+        "metrics": {
+          "execution_time": 14.147791862487793,
+          "total_tokens": 10232,
+          "total_cost": 0.0012227,
+          "history_entries": 27,
+          "prompt_tokens": 9567,
+          "completion_tokens": 665,
+          "pre_dedup_entities": 20,
+          "pre_dedup_relations": 12,
+          "pre_dedup_edges": 9,
+          "final_entities": 18,
+          "final_edges": 9,
+          "final_relations": 12,
+          "deduplication_ratio_entities": 0.9,
+          "deduplication_ratio_relations": 1.0,
+          "deduplication_ratio_edges": 1.0
+        }
+      },
+      "knowledge_graph": {
+        "pre_dedup": {
+          "entities": [
+            "wind",
+            "inn",
+            "hooks",
+            "Waystone Inn",
+            "laughter",
+            "clamor",
+            "conversation",
+            "Waystone",
+            "news",
+            "crowd",
+            "men",
+            "inn\u2019s sign",
+            "bar",
+            "autumn leaves",
+            "clatter",
+            "music",
+            "night",
+            "road",
+            "drinking house",
+            "trees"
+          ],
+          "relations": [
+            {
+              "subject": "crowd",
+              "predicate": "filled",
+              "object": "laughter"
+            },
+            {
+              "subject": "wind",
+              "predicate": "sighs through",
+              "object": "trees"
+            },
+            {
+              "subject": "crowd",
+              "predicate": "filled",
+              "object": "clatter"
+            },
+            {
+              "subject": "road",
+              "predicate": "covered in",
+              "object": "autumn leaves"
+            },
+            {
+              "subject": "Waystone Inn",
+              "predicate": "is",
+              "object": "inn"
+            },
+            {
+              "subject": "wind",
+              "predicate": "brushed",
+              "object": "road"
+            },
+            {
+              "subject": "inn\u2019s sign",
+              "predicate": "creaking on",
+              "object": "hooks"
+            },
+            {
+              "subject": "men",
+              "predicate": "avoiding",
+              "object": "news"
+            },
+            {
+              "subject": "Waystone",
+              "predicate": "inside",
+              "object": "bar"
+            },
+            {
+              "subject": "drinking house",
+              "predicate": "during",
+              "object": "night"
+            },
+            {
+              "subject": "crowd",
+              "predicate": "filled",
+              "object": "clamor"
+            },
+            {
+              "subject": "crowd",
+              "predicate": "filled",
+              "object": "conversation"
+            }
+          ],
+          "edges": [
+            "filled",
+            "creaking on",
+            "inside",
+            "is",
+            "during",
+            "brushed",
+            "covered in",
+            "sighs through",
+            "avoiding"
+          ],
+          "entity_count": 20,
+          "relation_count": 12,
+          "edge_count": 9
+        },
+        "post_dedup": {
+          "entity_count": 18,
+          "relation_count": 12,
+          "edge_count": 9,
+          "deduplication_ratios": {
+            "entities": 0.9,
+            "relations": 1.0,
+            "edges": 1.0
+          }
+        }
+      },
+      "corpus_sample": "\nPROLOGUE\n\nA Silence of Three Parts\n\nIT WAS NIGHT AGAIN. The Waystone Inn lay in silence, and it was a silence of three parts.\n\nThe most obvious part was a hollow, echoing quiet, made by things that w...",
+      "corpus_file": "corpus_texts/corpus_1000_chars.txt",
+      "total_metrics": {
+        "prompt_tokens": 11657,
+        "completion_tokens": 1453,
+        "total_tokens": 13110,
+        "total_cost": 0.0017469,
+        "total_time": 19.514304876327515,
+        "final_entity_count": 20,
+        "final_relation_count": 12,
+        "final_edge_count": 9
+      }
+    },
+    "10000": {
+      "corpus_size": 10000,
+      "corpus_length": 10000,
+      "steps_1_and_2_kg_generation": {
+        "entities_count": 90,
+        "relations_count": 78,
+        "edge_count": 62,
+        "metrics": {
+          "execution_time": 15.232217073440552,
+          "prompt_tokens": 16255,
+          "completion_tokens": 5265,
+          "total_tokens": 21520,
+          "total_cost": 0.0037314999999999996,
+          "history_entries": 17
+        }
+      },
+      "step_3_resolution": {
+        "metrics": {
+          "execution_time": 51.35220670700073,
+          "total_tokens": 53295,
+          "total_cost": 0.0063552,
+          "history_entries": 136,
+          "prompt_tokens": 49876,
+          "completion_tokens": 3419,
+          "pre_dedup_entities": 90,
+          "pre_dedup_relations": 78,
+          "pre_dedup_edges": 62,
+          "final_entities": 78,
+          "final_edges": 57,
+          "final_relations": 75,
+          "deduplication_ratio_entities": 0.8666666666666667,
+          "deduplication_ratio_relations": 0.9615384615384616,
+          "deduplication_ratio_edges": 0.9193548387096774
+        }
+      },
+      "knowledge_graph": {
+        "pre_dedup": {
+          "entities": [
+            "wind",
+            "door",
+            "boy",
+            "inn",
+            "stools",
+            "Kote",
+            "Waystone Inn",
+            "table",
+            "God",
+            "grain",
+            "Waystone",
+            "news",
+            "bandits",
+            "bar",
+            "mad dogs",
+            "Taborlin the Great",
+            "blood",
+            "innkeeper",
+            "wall",
+            "heat",
+            "night",
+            "demon",
+            "corner of the bar",
+            "trees",
+            "lamplight",
+            "Taborlin",
+            "Rannish",
+            "shirt",
+            "chest",
+            "sky",
+            "river-smooth stone",
+            "flame",
+            "laughter",
+            "Demons",
+            "hands",
+            "Boy",
+            "Jake",
+            "conversation",
+            "demons",
+            "body",
+            "man",
+            "cuts",
+            "red",
+            "eyes",
+            "silver penny",
+            "amulet",
+            "innkeep",
+            "Cendling night",
+            "saddle blanket",
+            "fire",
+            "spirits",
+            "tinker",
+            "Shep",
+            "Chandrian",
+            "iron penny",
+            "stone",
+            "crowd",
+            "Carter",
+            "inn\u2019s sign",
+            "stone hearth",
+            "road",
+            "Cob",
+            "friends",
+            "hooks",
+            "clothes",
+            "front door",
+            "Tehlu",
+            "mahogany",
+            "dog",
+            "copper penny",
+            "Old Cob",
+            "true-red hair",
+            "Graham",
+            "chair",
+            "barrels",
+            "Jacob Walker",
+            "clamor",
+            "face",
+            "horse",
+            "common room",
+            "men",
+            "autumn leaves",
+            "floor",
+            "farm",
+            "clatter",
+            "wood",
+            "smith\u2019s prentice",
+            "stones",
+            "drinking house",
+            "linen cloth"
+          ],
+          "relations": [
+            {
+              "subject": "Taborlin the Great",
+              "predicate": "subject of story told by",
+              "object": "Cob"
+            },
+            {
+              "subject": "friends",
+              "predicate": "jumped off",
+              "object": "stools"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "sold amulet to",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "refuse",
+              "object": "Tehlu"
+            },
+            {
+              "subject": "saddle blanket",
+              "predicate": "attached to",
+              "object": "chest"
+            },
+            {
+              "subject": "eyes",
+              "predicate": "like",
+              "object": "horse"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "listens to",
+              "object": "Cob"
+            },
+            {
+              "subject": "autumn leaves",
+              "predicate": "trailing down",
+              "object": "road"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "shared dinner with",
+              "object": "tinker"
+            },
+            {
+              "subject": "front door",
+              "predicate": "banged",
+              "object": "door"
+            },
+            {
+              "subject": "Old Cob",
+              "predicate": "told story about",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "true-red hair",
+              "predicate": "red as",
+              "object": "flame"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "said",
+              "object": "Boy"
+            },
+            {
+              "subject": "Waystone",
+              "predicate": "was",
+              "object": "Waystone"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "said to",
+              "object": "Cob"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "threatened by",
+              "object": "horse"
+            },
+            {
+              "subject": "smith\u2019s prentice",
+              "predicate": "from",
+              "object": "Rannish"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "worth",
+              "object": "iron penny"
+            },
+            {
+              "subject": "linen cloth",
+              "predicate": "rubbing along",
+              "object": "grain"
+            },
+            {
+              "subject": "face",
+              "predicate": "smeared with",
+              "object": "blood"
+            },
+            {
+              "subject": "linen cloth",
+              "predicate": "rubbing along",
+              "object": "bar"
+            },
+            {
+              "subject": "wind",
+              "predicate": "obeyed",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "innkeep",
+              "predicate": "pulled",
+              "object": "Shep"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "threatened by",
+              "object": "bandits"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "protect",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "fell",
+              "object": "sky"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are",
+              "object": "demons"
+            },
+            {
+              "subject": "clothes",
+              "predicate": "covered with",
+              "object": "cuts"
+            },
+            {
+              "subject": "shirt",
+              "predicate": "stained",
+              "object": "red"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "entered through",
+              "object": "door"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "entered",
+              "object": "common room"
+            },
+            {
+              "subject": "floor",
+              "predicate": "underfoot",
+              "object": "floor"
+            },
+            {
+              "subject": "barrels",
+              "predicate": "behind",
+              "object": "bar"
+            },
+            {
+              "subject": "stone hearth",
+              "predicate": "held",
+              "object": "fire"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "clutched",
+              "object": "saddle blanket"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are",
+              "object": "spirits"
+            },
+            {
+              "subject": "news",
+              "predicate": "troubling",
+              "object": "men"
+            },
+            {
+              "subject": "men",
+              "predicate": "inside",
+              "object": "inn"
+            },
+            {
+              "subject": "saddle blanket",
+              "predicate": "dropped on",
+              "object": "table"
+            },
+            {
+              "subject": "clamor",
+              "predicate": "expects from",
+              "object": "drinking house"
+            },
+            {
+              "subject": "river-smooth stone",
+              "predicate": "heavy as",
+              "object": "river-smooth stone"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "sit on",
+              "object": "chair"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "at",
+              "object": "Waystone"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are not",
+              "object": "demons"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are",
+              "object": "men"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "mentioned by",
+              "object": "Cob"
+            },
+            {
+              "subject": "man",
+              "predicate": "waiting to",
+              "object": "man"
+            },
+            {
+              "subject": "farm",
+              "predicate": "happened",
+              "object": "Cendling night"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "saw",
+              "object": "sky"
+            },
+            {
+              "subject": "innkeep",
+              "predicate": "pulled",
+              "object": "Old Cob"
+            },
+            {
+              "subject": "saddle blanket",
+              "predicate": "full of",
+              "object": "stones"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "tried to ease",
+              "object": "Carter"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "safe from",
+              "object": "Demons"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are",
+              "object": "Demons"
+            },
+            {
+              "subject": "wind",
+              "predicate": "bore",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "clatter",
+              "predicate": "expects from",
+              "object": "drinking house"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "listens to",
+              "object": "Cob"
+            },
+            {
+              "subject": "Waystone Inn",
+              "predicate": "has",
+              "object": "Cob"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "met",
+              "object": "tinker"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "threatened by",
+              "object": "mad dogs"
+            },
+            {
+              "subject": "hands",
+              "predicate": "of",
+              "object": "man"
+            },
+            {
+              "subject": "innkeep",
+              "predicate": "pulled",
+              "object": "Jake"
+            },
+            {
+              "subject": "Shep",
+              "predicate": "listens to",
+              "object": "Cob"
+            },
+            {
+              "subject": "man",
+              "predicate": "had",
+              "object": "true-red hair"
+            },
+            {
+              "subject": "inn\u2019s sign",
+              "predicate": "creaking on",
+              "object": "hooks"
+            },
+            {
+              "subject": "saddle blanket",
+              "predicate": "knocked against",
+              "object": "wood"
+            },
+            {
+              "subject": "mahogany",
+              "predicate": "gleamed in",
+              "object": "lamplight"
+            },
+            {
+              "subject": "demon",
+              "predicate": "different from",
+              "object": "dog"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "said to",
+              "object": "Jake"
+            },
+            {
+              "subject": "stone hearth",
+              "predicate": "held",
+              "object": "heat"
+            },
+            {
+              "subject": "men",
+              "predicate": "huddled at",
+              "object": "corner of the bar"
+            },
+            {
+              "subject": "wind",
+              "predicate": "would have sighed through",
+              "object": "trees"
+            },
+            {
+              "subject": "man",
+              "predicate": "had",
+              "object": "eyes"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "worth",
+              "object": "copper penny"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "commanded",
+              "object": "stone"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "worth",
+              "object": "silver penny"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "knew name of",
+              "object": "wind"
+            },
+            {
+              "subject": "shirt",
+              "predicate": "stuck to",
+              "object": "body"
+            }
+          ],
+          "edges": [
+            "from",
+            "inside",
+            "tried to ease",
+            "jumped off",
+            "entered",
+            "waiting to",
+            "has",
+            "said to",
+            "rubbing along",
+            "stained",
+            "expects from",
+            "listens to",
+            "heavy as",
+            "happened",
+            "troubling",
+            "clutched",
+            "creaking on",
+            "would have sighed through",
+            "mentioned by",
+            "trailing down",
+            "bore",
+            "worth",
+            "huddled at",
+            "like",
+            "threatened by",
+            "told story about",
+            "are",
+            "are not",
+            "knocked against",
+            "refuse",
+            "red as",
+            "behind",
+            "gleamed in",
+            "at",
+            "covered with",
+            "met",
+            "dropped on",
+            "knew name of",
+            "said",
+            "obeyed",
+            "had",
+            "entered through",
+            "subject of story told by",
+            "sold amulet to",
+            "protect",
+            "banged",
+            "full of",
+            "of",
+            "stuck to",
+            "fell",
+            "saw",
+            "underfoot",
+            "smeared with",
+            "was",
+            "held",
+            "sit on",
+            "attached to",
+            "pulled",
+            "safe from",
+            "different from",
+            "commanded",
+            "shared dinner with"
+          ],
+          "entity_count": 90,
+          "relation_count": 78,
+          "edge_count": 62
+        },
+        "post_dedup": {
+          "entity_count": 78,
+          "relation_count": 75,
+          "edge_count": 57,
+          "deduplication_ratios": {
+            "entities": 0.8666666666666667,
+            "relations": 0.9615384615384616,
+            "edges": 0.9193548387096774
+          }
+        }
+      },
+      "corpus_sample": "\nPROLOGUE\n\nA Silence of Three Parts\n\nIT WAS NIGHT AGAIN. The Waystone Inn lay in silence, and it was a silence of three parts.\n\nThe most obvious part was a hollow, echoing quiet, made by things that w...",
+      "corpus_file": "corpus_texts/corpus_10000_chars.txt",
+      "total_metrics": {
+        "prompt_tokens": 66131,
+        "completion_tokens": 8684,
+        "total_tokens": 74815,
+        "total_cost": 0.0100867,
+        "total_time": 66.58442378044128,
+        "final_entity_count": 90,
+        "final_relation_count": 78,
+        "final_edge_count": 62
+      }
+    }
+  }
+}

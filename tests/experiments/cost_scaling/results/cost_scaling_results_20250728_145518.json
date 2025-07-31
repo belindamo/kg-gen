@@ -1,0 +1,6792 @@
+{
+  "experiment_config": {
+    "model": "gemini/gemini-2.0-flash",
+    "corpus_sizes": [
+      100,
+      1000,
+      10000,
+      100000,
+      1000000
+    ],
+    "timestamp": "2025-07-28 14:51:44"
+  },
+  "results": {
+    "100": {
+      "corpus_size": 100,
+      "corpus_length": 100,
+      "steps_1_and_2_kg_generation": {
+        "entities_count": 1,
+        "relations_count": 1,
+        "edge_count": 1,
+        "metrics": {
+          "execution_time": 1.2719800472259521,
+          "prompt_tokens": 664,
+          "completion_tokens": 54,
+          "total_tokens": 718,
+          "total_cost": 8.8e-05,
+          "history_entries": 2
+        }
+      },
+      "step_3_resolution": {
+        "metrics": {
+          "execution_time": 4.3727030754089355,
+          "total_tokens": 676,
+          "total_cost": 8.319999999999999e-05,
+          "history_entries": 2,
+          "prompt_tokens": 624,
+          "completion_tokens": 52,
+          "pre_dedup_entities": 1,
+          "pre_dedup_relations": 1,
+          "pre_dedup_edges": 1,
+          "final_entities": 1,
+          "final_edges": 1,
+          "final_relations": 1,
+          "deduplication_ratio_entities": 1.0,
+          "deduplication_ratio_relations": 1.0,
+          "deduplication_ratio_edges": 1.0
+        }
+      },
+      "knowledge_graph": {
+        "pre_dedup": {
+          "entities": [
+            "Waystone Inn"
+          ],
+          "relations": [
+            {
+              "subject": "Waystone Inn",
+              "predicate": "lay in",
+              "object": "Waystone Inn"
+            }
+          ],
+          "edges": [
+            "lay in"
+          ],
+          "entity_count": 1,
+          "relation_count": 1,
+          "edge_count": 1
+        },
+        "post_dedup": {
+          "entity_count": 1,
+          "relation_count": 1,
+          "edge_count": 1,
+          "deduplication_ratios": {
+            "entities": 1.0,
+            "relations": 1.0,
+            "edges": 1.0
+          }
+        }
+      },
+      "corpus_sample": "\nPROLOGUE\n\nA Silence of Three Parts\n\nIT WAS NIGHT AGAIN. The Waystone Inn lay in silence, and it was",
+      "corpus_file": "corpus_texts/corpus_100_chars.txt",
+      "total_metrics": {
+        "prompt_tokens": 1288,
+        "completion_tokens": 106,
+        "total_tokens": 1394,
+        "total_cost": 0.0001712,
+        "total_time": 5.644683122634888,
+        "final_entity_count": 1,
+        "final_relation_count": 1,
+        "final_edge_count": 1
+      }
+    },
+    "1000": {
+      "corpus_size": 1000,
+      "corpus_length": 1000,
+      "steps_1_and_2_kg_generation": {
+        "entities_count": 20,
+        "relations_count": 12,
+        "edge_count": 9,
+        "metrics": {
+          "execution_time": 5.366513013839722,
+          "prompt_tokens": 2090,
+          "completion_tokens": 788,
+          "total_tokens": 2878,
+          "total_cost": 0.0005242,
+          "history_entries": 3
+        }
+      },
+      "step_3_resolution": {
+        "metrics": {
+          "execution_time": 14.147791862487793,
+          "total_tokens": 10232,
+          "total_cost": 0.0012227,
+          "history_entries": 27,
+          "prompt_tokens": 9567,
+          "completion_tokens": 665,
+          "pre_dedup_entities": 20,
+          "pre_dedup_relations": 12,
+          "pre_dedup_edges": 9,
+          "final_entities": 18,
+          "final_edges": 9,
+          "final_relations": 12,
+          "deduplication_ratio_entities": 0.9,
+          "deduplication_ratio_relations": 1.0,
+          "deduplication_ratio_edges": 1.0
+        }
+      },
+      "knowledge_graph": {
+        "pre_dedup": {
+          "entities": [
+            "wind",
+            "inn",
+            "hooks",
+            "Waystone Inn",
+            "laughter",
+            "clamor",
+            "conversation",
+            "Waystone",
+            "news",
+            "crowd",
+            "men",
+            "inn\u2019s sign",
+            "bar",
+            "autumn leaves",
+            "clatter",
+            "music",
+            "night",
+            "road",
+            "drinking house",
+            "trees"
+          ],
+          "relations": [
+            {
+              "subject": "crowd",
+              "predicate": "filled",
+              "object": "laughter"
+            },
+            {
+              "subject": "wind",
+              "predicate": "sighs through",
+              "object": "trees"
+            },
+            {
+              "subject": "crowd",
+              "predicate": "filled",
+              "object": "clatter"
+            },
+            {
+              "subject": "road",
+              "predicate": "covered in",
+              "object": "autumn leaves"
+            },
+            {
+              "subject": "Waystone Inn",
+              "predicate": "is",
+              "object": "inn"
+            },
+            {
+              "subject": "wind",
+              "predicate": "brushed",
+              "object": "road"
+            },
+            {
+              "subject": "inn\u2019s sign",
+              "predicate": "creaking on",
+              "object": "hooks"
+            },
+            {
+              "subject": "men",
+              "predicate": "avoiding",
+              "object": "news"
+            },
+            {
+              "subject": "Waystone",
+              "predicate": "inside",
+              "object": "bar"
+            },
+            {
+              "subject": "drinking house",
+              "predicate": "during",
+              "object": "night"
+            },
+            {
+              "subject": "crowd",
+              "predicate": "filled",
+              "object": "clamor"
+            },
+            {
+              "subject": "crowd",
+              "predicate": "filled",
+              "object": "conversation"
+            }
+          ],
+          "edges": [
+            "filled",
+            "creaking on",
+            "inside",
+            "is",
+            "during",
+            "brushed",
+            "covered in",
+            "sighs through",
+            "avoiding"
+          ],
+          "entity_count": 20,
+          "relation_count": 12,
+          "edge_count": 9
+        },
+        "post_dedup": {
+          "entity_count": 18,
+          "relation_count": 12,
+          "edge_count": 9,
+          "deduplication_ratios": {
+            "entities": 0.9,
+            "relations": 1.0,
+            "edges": 1.0
+          }
+        }
+      },
+      "corpus_sample": "\nPROLOGUE\n\nA Silence of Three Parts\n\nIT WAS NIGHT AGAIN. The Waystone Inn lay in silence, and it was a silence of three parts.\n\nThe most obvious part was a hollow, echoing quiet, made by things that w...",
+      "corpus_file": "corpus_texts/corpus_1000_chars.txt",
+      "total_metrics": {
+        "prompt_tokens": 11657,
+        "completion_tokens": 1453,
+        "total_tokens": 13110,
+        "total_cost": 0.0017469,
+        "total_time": 19.514304876327515,
+        "final_entity_count": 20,
+        "final_relation_count": 12,
+        "final_edge_count": 9
+      }
+    },
+    "10000": {
+      "corpus_size": 10000,
+      "corpus_length": 10000,
+      "steps_1_and_2_kg_generation": {
+        "entities_count": 90,
+        "relations_count": 78,
+        "edge_count": 62,
+        "metrics": {
+          "execution_time": 15.232217073440552,
+          "prompt_tokens": 16255,
+          "completion_tokens": 5265,
+          "total_tokens": 21520,
+          "total_cost": 0.0037314999999999996,
+          "history_entries": 17
+        }
+      },
+      "step_3_resolution": {
+        "metrics": {
+          "execution_time": 51.35220670700073,
+          "total_tokens": 53295,
+          "total_cost": 0.0063552,
+          "history_entries": 136,
+          "prompt_tokens": 49876,
+          "completion_tokens": 3419,
+          "pre_dedup_entities": 90,
+          "pre_dedup_relations": 78,
+          "pre_dedup_edges": 62,
+          "final_entities": 78,
+          "final_edges": 57,
+          "final_relations": 75,
+          "deduplication_ratio_entities": 0.8666666666666667,
+          "deduplication_ratio_relations": 0.9615384615384616,
+          "deduplication_ratio_edges": 0.9193548387096774
+        }
+      },
+      "knowledge_graph": {
+        "pre_dedup": {
+          "entities": [
+            "wind",
+            "door",
+            "boy",
+            "inn",
+            "stools",
+            "Kote",
+            "Waystone Inn",
+            "table",
+            "God",
+            "grain",
+            "Waystone",
+            "news",
+            "bandits",
+            "bar",
+            "mad dogs",
+            "Taborlin the Great",
+            "blood",
+            "innkeeper",
+            "wall",
+            "heat",
+            "night",
+            "demon",
+            "corner of the bar",
+            "trees",
+            "lamplight",
+            "Taborlin",
+            "Rannish",
+            "shirt",
+            "chest",
+            "sky",
+            "river-smooth stone",
+            "flame",
+            "laughter",
+            "Demons",
+            "hands",
+            "Boy",
+            "Jake",
+            "conversation",
+            "demons",
+            "body",
+            "man",
+            "cuts",
+            "red",
+            "eyes",
+            "silver penny",
+            "amulet",
+            "innkeep",
+            "Cendling night",
+            "saddle blanket",
+            "fire",
+            "spirits",
+            "tinker",
+            "Shep",
+            "Chandrian",
+            "iron penny",
+            "stone",
+            "crowd",
+            "Carter",
+            "inn\u2019s sign",
+            "stone hearth",
+            "road",
+            "Cob",
+            "friends",
+            "hooks",
+            "clothes",
+            "front door",
+            "Tehlu",
+            "mahogany",
+            "dog",
+            "copper penny",
+            "Old Cob",
+            "true-red hair",
+            "Graham",
+            "chair",
+            "barrels",
+            "Jacob Walker",
+            "clamor",
+            "face",
+            "horse",
+            "common room",
+            "men",
+            "autumn leaves",
+            "floor",
+            "farm",
+            "clatter",
+            "wood",
+            "smith\u2019s prentice",
+            "stones",
+            "drinking house",
+            "linen cloth"
+          ],
+          "relations": [
+            {
+              "subject": "Taborlin the Great",
+              "predicate": "subject of story told by",
+              "object": "Cob"
+            },
+            {
+              "subject": "friends",
+              "predicate": "jumped off",
+              "object": "stools"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "sold amulet to",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "refuse",
+              "object": "Tehlu"
+            },
+            {
+              "subject": "saddle blanket",
+              "predicate": "attached to",
+              "object": "chest"
+            },
+            {
+              "subject": "eyes",
+              "predicate": "like",
+              "object": "horse"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "listens to",
+              "object": "Cob"
+            },
+            {
+              "subject": "autumn leaves",
+              "predicate": "trailing down",
+              "object": "road"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "shared dinner with",
+              "object": "tinker"
+            },
+            {
+              "subject": "front door",
+              "predicate": "banged",
+              "object": "door"
+            },
+            {
+              "subject": "Old Cob",
+              "predicate": "told story about",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "true-red hair",
+              "predicate": "red as",
+              "object": "flame"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "said",
+              "object": "Boy"
+            },
+            {
+              "subject": "Waystone",
+              "predicate": "was",
+              "object": "Waystone"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "said to",
+              "object": "Cob"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "threatened by",
+              "object": "horse"
+            },
+            {
+              "subject": "smith\u2019s prentice",
+              "predicate": "from",
+              "object": "Rannish"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "worth",
+              "object": "iron penny"
+            },
+            {
+              "subject": "linen cloth",
+              "predicate": "rubbing along",
+              "object": "grain"
+            },
+            {
+              "subject": "face",
+              "predicate": "smeared with",
+              "object": "blood"
+            },
+            {
+              "subject": "linen cloth",
+              "predicate": "rubbing along",
+              "object": "bar"
+            },
+            {
+              "subject": "wind",
+              "predicate": "obeyed",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "innkeep",
+              "predicate": "pulled",
+              "object": "Shep"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "threatened by",
+              "object": "bandits"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "protect",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "fell",
+              "object": "sky"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are",
+              "object": "demons"
+            },
+            {
+              "subject": "clothes",
+              "predicate": "covered with",
+              "object": "cuts"
+            },
+            {
+              "subject": "shirt",
+              "predicate": "stained",
+              "object": "red"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "entered through",
+              "object": "door"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "entered",
+              "object": "common room"
+            },
+            {
+              "subject": "floor",
+              "predicate": "underfoot",
+              "object": "floor"
+            },
+            {
+              "subject": "barrels",
+              "predicate": "behind",
+              "object": "bar"
+            },
+            {
+              "subject": "stone hearth",
+              "predicate": "held",
+              "object": "fire"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "clutched",
+              "object": "saddle blanket"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are",
+              "object": "spirits"
+            },
+            {
+              "subject": "news",
+              "predicate": "troubling",
+              "object": "men"
+            },
+            {
+              "subject": "men",
+              "predicate": "inside",
+              "object": "inn"
+            },
+            {
+              "subject": "saddle blanket",
+              "predicate": "dropped on",
+              "object": "table"
+            },
+            {
+              "subject": "clamor",
+              "predicate": "expects from",
+              "object": "drinking house"
+            },
+            {
+              "subject": "river-smooth stone",
+              "predicate": "heavy as",
+              "object": "river-smooth stone"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "sit on",
+              "object": "chair"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "at",
+              "object": "Waystone"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are not",
+              "object": "demons"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are",
+              "object": "men"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "mentioned by",
+              "object": "Cob"
+            },
+            {
+              "subject": "man",
+              "predicate": "waiting to",
+              "object": "man"
+            },
+            {
+              "subject": "farm",
+              "predicate": "happened",
+              "object": "Cendling night"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "saw",
+              "object": "sky"
+            },
+            {
+              "subject": "innkeep",
+              "predicate": "pulled",
+              "object": "Old Cob"
+            },
+            {
+              "subject": "saddle blanket",
+              "predicate": "full of",
+              "object": "stones"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "tried to ease",
+              "object": "Carter"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "safe from",
+              "object": "Demons"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are",
+              "object": "Demons"
+            },
+            {
+              "subject": "wind",
+              "predicate": "bore",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "clatter",
+              "predicate": "expects from",
+              "object": "drinking house"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "listens to",
+              "object": "Cob"
+            },
+            {
+              "subject": "Waystone Inn",
+              "predicate": "has",
+              "object": "Cob"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "met",
+              "object": "tinker"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "threatened by",
+              "object": "mad dogs"
+            },
+            {
+              "subject": "hands",
+              "predicate": "of",
+              "object": "man"
+            },
+            {
+              "subject": "innkeep",
+              "predicate": "pulled",
+              "object": "Jake"
+            },
+            {
+              "subject": "Shep",
+              "predicate": "listens to",
+              "object": "Cob"
+            },
+            {
+              "subject": "man",
+              "predicate": "had",
+              "object": "true-red hair"
+            },
+            {
+              "subject": "inn\u2019s sign",
+              "predicate": "creaking on",
+              "object": "hooks"
+            },
+            {
+              "subject": "saddle blanket",
+              "predicate": "knocked against",
+              "object": "wood"
+            },
+            {
+              "subject": "mahogany",
+              "predicate": "gleamed in",
+              "object": "lamplight"
+            },
+            {
+              "subject": "demon",
+              "predicate": "different from",
+              "object": "dog"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "said to",
+              "object": "Jake"
+            },
+            {
+              "subject": "stone hearth",
+              "predicate": "held",
+              "object": "heat"
+            },
+            {
+              "subject": "men",
+              "predicate": "huddled at",
+              "object": "corner of the bar"
+            },
+            {
+              "subject": "wind",
+              "predicate": "would have sighed through",
+              "object": "trees"
+            },
+            {
+              "subject": "man",
+              "predicate": "had",
+              "object": "eyes"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "worth",
+              "object": "copper penny"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "commanded",
+              "object": "stone"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "worth",
+              "object": "silver penny"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "knew name of",
+              "object": "wind"
+            },
+            {
+              "subject": "shirt",
+              "predicate": "stuck to",
+              "object": "body"
+            }
+          ],
+          "edges": [
+            "from",
+            "inside",
+            "tried to ease",
+            "jumped off",
+            "entered",
+            "waiting to",
+            "has",
+            "said to",
+            "rubbing along",
+            "stained",
+            "expects from",
+            "listens to",
+            "heavy as",
+            "happened",
+            "troubling",
+            "clutched",
+            "creaking on",
+            "would have sighed through",
+            "mentioned by",
+            "trailing down",
+            "bore",
+            "worth",
+            "huddled at",
+            "like",
+            "threatened by",
+            "told story about",
+            "are",
+            "are not",
+            "knocked against",
+            "refuse",
+            "red as",
+            "behind",
+            "gleamed in",
+            "at",
+            "covered with",
+            "met",
+            "dropped on",
+            "knew name of",
+            "said",
+            "obeyed",
+            "had",
+            "entered through",
+            "subject of story told by",
+            "sold amulet to",
+            "protect",
+            "banged",
+            "full of",
+            "of",
+            "stuck to",
+            "fell",
+            "saw",
+            "underfoot",
+            "smeared with",
+            "was",
+            "held",
+            "sit on",
+            "attached to",
+            "pulled",
+            "safe from",
+            "different from",
+            "commanded",
+            "shared dinner with"
+          ],
+          "entity_count": 90,
+          "relation_count": 78,
+          "edge_count": 62
+        },
+        "post_dedup": {
+          "entity_count": 78,
+          "relation_count": 75,
+          "edge_count": 57,
+          "deduplication_ratios": {
+            "entities": 0.8666666666666667,
+            "relations": 0.9615384615384616,
+            "edges": 0.9193548387096774
+          }
+        }
+      },
+      "corpus_sample": "\nPROLOGUE\n\nA Silence of Three Parts\n\nIT WAS NIGHT AGAIN. The Waystone Inn lay in silence, and it was a silence of three parts.\n\nThe most obvious part was a hollow, echoing quiet, made by things that w...",
+      "corpus_file": "corpus_texts/corpus_10000_chars.txt",
+      "total_metrics": {
+        "prompt_tokens": 66131,
+        "completion_tokens": 8684,
+        "total_tokens": 74815,
+        "total_cost": 0.0100867,
+        "total_time": 66.58442378044128,
+        "final_entity_count": 90,
+        "final_relation_count": 78,
+        "final_edge_count": 62
+      }
+    },
+    "100000": {
+      "corpus_size": 100000,
+      "corpus_length": 100000,
+      "steps_1_and_2_kg_generation": {
+        "entities_count": 727,
+        "relations_count": 926,
+        "edge_count": 498,
+        "metrics": {
+          "execution_time": 35.28834104537964,
+          "prompt_tokens": 169817,
+          "completion_tokens": 73490,
+          "total_tokens": 243307,
+          "total_cost": 0.049738399999999995,
+          "history_entries": 177
+        }
+      },
+      "step_3_resolution": {
+        "metrics": {
+          "execution_time": 78.46696496009827,
+          "total_tokens": 435007,
+          "total_cost": 0.05229279999999998,
+          "history_entries": 1098,
+          "prompt_tokens": 405700,
+          "completion_tokens": 29307,
+          "pre_dedup_entities": 727,
+          "pre_dedup_relations": 926,
+          "pre_dedup_edges": 498,
+          "final_entities": 604,
+          "final_edges": 424,
+          "final_relations": 924,
+          "deduplication_ratio_entities": 0.8308115543328748,
+          "deduplication_ratio_relations": 0.9978401727861771,
+          "deduplication_ratio_edges": 0.8514056224899599
+        }
+      },
+      "knowledge_graph": {
+        "pre_dedup": {
+          "entities": [
+            "wind",
+            "world",
+            "inn",
+            "hooves",
+            "terror",
+            "Green shirt",
+            "folk",
+            "grandparents",
+            "hot knife",
+            "Children",
+            "hoofbeats",
+            "nameless void",
+            "clean fire",
+            "knight",
+            "shop",
+            "travelers",
+            "room",
+            "worldly possessions",
+            "story",
+            "heroes",
+            "ground",
+            "caravan",
+            "levies",
+            "grain",
+            "wood alcohol",
+            "toe",
+            "Baths",
+            "Sleep",
+            "needle",
+            "leaves",
+            "counter",
+            "wall",
+            "Silk scarves",
+            "reasonable fellow",
+            "wives",
+            "young man",
+            "Lunch",
+            "bone needle",
+            "red light",
+            "bucket",
+            "lizard",
+            "clean linen",
+            "Abbot\u2019s Ford",
+            "life",
+            "small bottles",
+            "formal dinner",
+            "oaks",
+            "piece of cold-wrought iron",
+            "shirt",
+            "Motherleaf",
+            "mood",
+            "forehead",
+            "customers",
+            "perfumers",
+            "ghosts",
+            "sky",
+            "river-smooth stone",
+            "rebels",
+            "master\u2019s room",
+            "hooded cloak",
+            "legend",
+            "Demons",
+            "lady",
+            "CHRONICLER",
+            "hands",
+            "bag of flat river stones",
+            "Boy",
+            "Belt leather",
+            "draft horses",
+            "shirt of heavy metal rings",
+            "sugar",
+            "Two men",
+            "blanket",
+            "harvests",
+            "women",
+            "cloak",
+            "Nelly",
+            "someone\u2019s daughter",
+            "glass",
+            "royal-blue shirt",
+            "money",
+            "cudgel",
+            "royal blue",
+            "coke",
+            "stars",
+            "dried meat",
+            "scribing",
+            "bundle of coins",
+            "jar of ink",
+            "Oren Velciter",
+            "saddle blanket",
+            "sandy-haired man",
+            "fools",
+            "oats",
+            "dray",
+            "two women",
+            "Men",
+            "tables",
+            "silver bits",
+            "doors",
+            "Penitent King",
+            "livelihood",
+            "fall",
+            "holy name of God",
+            "dockside whore",
+            "flowers",
+            "cheek",
+            "layers of clothes",
+            "tabletop",
+            "butter",
+            "iron penny",
+            "stone",
+            "footprints of lamplight",
+            "third levy tax",
+            "word",
+            "inn\u2019s windows",
+            "dinner",
+            "earl",
+            "scribe",
+            "road",
+            "Fine lace",
+            "iron drabs",
+            "Newarre",
+            "campfire",
+            "scars",
+            "dragons",
+            "emptiness",
+            "children\u2019s songs",
+            "black stone fireplace",
+            "angel",
+            "pit",
+            "fountain",
+            "beard",
+            "clothes",
+            "autumn days",
+            "Cut cork",
+            "squire",
+            "deserters",
+            "nails",
+            "copper penny",
+            "true-red hair",
+            "chair",
+            "smoke",
+            "belts",
+            "Minor necessities",
+            "hot water",
+            "leather blacksmith\u2019s apron",
+            "Witkins",
+            "beans",
+            "criminals",
+            "Mhenka",
+            "six friends",
+            "ache",
+            "Chronicler",
+            "floor",
+            "Purvis",
+            "wood",
+            "creature",
+            "person",
+            "hunting bows",
+            "heavy pair",
+            "house",
+            "mortal",
+            "ash",
+            "Writing paper",
+            "winter",
+            "blankets",
+            "stew",
+            "Treya",
+            "linen cloth",
+            "six men",
+            "alehouse",
+            "Melcombe",
+            "chocolate from Tarbean",
+            "boy",
+            "copper jots",
+            "copper pot",
+            "breath",
+            "desk",
+            "priest",
+            "smithy",
+            "silver talent",
+            "place in Imre",
+            "road dust",
+            "hero",
+            "object",
+            "bundles of belongings",
+            "pepper",
+            "cup",
+            "horse and cart",
+            "mattress",
+            "buttons",
+            "sunshine",
+            "spade",
+            "gold",
+            "news",
+            "ivory dice",
+            "dark roah",
+            "leather satchel",
+            "bar",
+            "spiderweb",
+            "head wound",
+            "Earl of Baedn-Bryt",
+            "salt",
+            "blood",
+            "innkeeper",
+            "bramble patch",
+            "Meneras",
+            "Temic",
+            "compelling lie",
+            "firewood",
+            "mounting board",
+            "corner of the bar",
+            "Three guards",
+            "daylight",
+            "king\u2019s army",
+            "leather cord",
+            "heart",
+            "Taborlin",
+            "cot",
+            "Anpauen",
+            "Rannish",
+            "saddlebag",
+            "souvenir",
+            "knives",
+            "two-wheel mule cart",
+            "Master Kote",
+            "flat leather satchel",
+            "dark",
+            "bootlaces",
+            "figure",
+            "daughter",
+            "woman",
+            "teeth",
+            "dark thing",
+            "laughter",
+            "earth",
+            "Eld",
+            "lies",
+            "swords",
+            "Jake",
+            "scythe blade",
+            "workbench",
+            "dark shape",
+            "pennies",
+            "opportunists",
+            "Liquor",
+            "body",
+            "spoon",
+            "Tarbean",
+            "narrow bed",
+            "ex-soldiers",
+            "sentiment",
+            "The Mating Habits of the Common Draccus",
+            "penny",
+            "farmers",
+            "thumb",
+            "sharpening wheel",
+            "polished horn from Aerueh",
+            "iron cudgel",
+            "things",
+            "innkeepers",
+            "cook fire",
+            "enemies",
+            "Scrael",
+            "amulet",
+            "innkeep",
+            "red-haired man",
+            "earl\u2019s manor",
+            "iron things",
+            "hearthfire",
+            "drab",
+            "alchemists",
+            "bed",
+            "kitchen",
+            "miller",
+            "beer",
+            "window",
+            "Abbott\u2019s Ford",
+            "mouth",
+            "saddle",
+            "wagon wheel",
+            "field of wheat",
+            "shares",
+            "tinker",
+            "Two young men",
+            "Bast",
+            "Hay",
+            "Kvothe Kingkiller",
+            "gloves",
+            "skull",
+            "Aryen",
+            "burning hair",
+            "iron pot",
+            "pigs",
+            "Carter\u2019s wounds",
+            "rye bread",
+            "king",
+            "hair",
+            "scythe blade\u2019s collar",
+            "ring of metal",
+            "doorway",
+            "Nighmane",
+            "circle of firelight",
+            "town\u2019s streets",
+            "Pot mender",
+            "spring thaw",
+            "dozen people",
+            "Fall",
+            "drinks",
+            "leather",
+            "oak barrels",
+            "soldiers",
+            "burlap sack",
+            "hangover cures",
+            "hall",
+            "harness",
+            "cinnamon",
+            "private room",
+            "arm",
+            "circle",
+            "weather",
+            "Prices of rooms",
+            "wounds",
+            "elm",
+            "matters",
+            "city streets",
+            "educated man",
+            "Tehlu",
+            "Chronicler\u2019s limp body",
+            "entertaining story",
+            "dark-haired companion",
+            "Friendly arguments",
+            "sickle blades",
+            "Graham",
+            "Jacob Walker",
+            "knee",
+            "windows",
+            "pens",
+            "Blackened body of God",
+            "town",
+            "Arrow",
+            "men",
+            "sheep",
+            "leather apron",
+            "garden",
+            "clatter",
+            "mothers",
+            "small towns",
+            "smith\u2019s prentice",
+            "corn",
+            "chairs",
+            "mutton",
+            "seat",
+            "drinking house",
+            "me",
+            "merchant",
+            "Folly",
+            "storm",
+            "thing",
+            "bushes",
+            "ring",
+            "Commander",
+            "ruins",
+            "door",
+            "strawberry wine",
+            "snow",
+            "Waystone Inn",
+            "war",
+            "canvas",
+            "observer",
+            "summer",
+            "throat",
+            "God",
+            "wagoneers",
+            "black shapes",
+            "bottles",
+            "scalp",
+            "Cheese",
+            "Waystone",
+            "bandits",
+            "mad dogs",
+            "daughters",
+            "pocket",
+            "Taborlin the Great",
+            "bonfire",
+            "books",
+            "heat",
+            "ha\u2019pennies",
+            "Reshi",
+            "bottle",
+            "noise",
+            "legs",
+            "Oldstone Bridge",
+            "lap",
+            "trees",
+            "arrow",
+            "lamplight",
+            "glass bottles",
+            "bloodred sumac",
+            "ear",
+            "barley",
+            "silver",
+            "gaze",
+            "satchel",
+            "collar",
+            "one elbow",
+            "Bentleys",
+            "officer",
+            "temperance",
+            "cheeks",
+            "heavy hooded cloak",
+            "iron nails",
+            "crucible",
+            "conversation",
+            "roots",
+            "hired man",
+            "Cealdish merchant",
+            "third time",
+            "back",
+            "woods",
+            "forge",
+            "wire",
+            "girl",
+            "leg",
+            "cold iron",
+            "cobblestones",
+            "tinderbox",
+            "silver penny",
+            "shears",
+            "lock of iron",
+            "Resavek",
+            "handle",
+            "rose water",
+            "smith",
+            "voice",
+            "wrist",
+            "discussion",
+            "mounting board\u2019s pegs",
+            "spirits",
+            "lover",
+            "Aerueh",
+            "aroma of citrus",
+            "Shep",
+            "broken ha\u2019pennies",
+            "fruit",
+            "deserter soldiers",
+            "Chandrian",
+            "mercenaries",
+            "black scabbard",
+            "dirt road",
+            "master",
+            "priests",
+            "business",
+            "crowd",
+            "fireplace",
+            "smile",
+            "drink",
+            "inn\u2019s sign",
+            "stone hearth",
+            "old leather",
+            "man without a face",
+            "children\u2019s song",
+            "lime",
+            "waterwheel",
+            "talents",
+            "student",
+            "hooded figure",
+            "poultice",
+            "Deolan",
+            "sumac",
+            "paper",
+            "great scholars",
+            "Bottles",
+            "trader",
+            "stone wall",
+            "Skarpi",
+            "poplars",
+            "Tehlu\u2019s angels",
+            "lining",
+            "red-handed killer",
+            "note",
+            "red-haired innkeeper",
+            "travelsack",
+            "pot",
+            "friends",
+            "bucket of soapy water",
+            "hooks",
+            "hand",
+            "firelight",
+            "chocolate",
+            "great lovers",
+            "shoulders",
+            "coin",
+            "socks",
+            "mahogany",
+            "drunks",
+            "apron",
+            "farmstead",
+            "People",
+            "Crazy Martin",
+            "arms",
+            "rotting flowers",
+            "guards",
+            "group",
+            "copper",
+            "myth",
+            "granda",
+            "clamor",
+            "iron",
+            "face",
+            "common room",
+            "oldest son",
+            "history",
+            "Kvothe the Arcane",
+            "linen",
+            "truth",
+            "well",
+            "Coins",
+            "left arm",
+            "child",
+            "sandy-haired merchant\u2019s son",
+            "grandfather",
+            "autumn leaves",
+            "assassin",
+            "farm",
+            "purses",
+            "stones",
+            "leather-bound book",
+            "corner",
+            "eye",
+            "grey-white metal",
+            "religion",
+            "scabbard",
+            "back of his head",
+            "houses",
+            "merchants",
+            "teacher",
+            "hearth",
+            "assistant",
+            "stairs",
+            "Ralien",
+            "Baedn",
+            "pair",
+            "old lover",
+            "polished horn",
+            "childhood friend",
+            "Linwood",
+            "stools",
+            "Ash",
+            "blacksmith",
+            "broken glass",
+            "Limes",
+            "old house",
+            "Kote",
+            "table",
+            "coal",
+            "coats",
+            "protection",
+            "wooden handle",
+            "autumn evening",
+            "needles",
+            "strawberries",
+            "ribs",
+            "cart wheels",
+            "Limes from Tinu\u00eb",
+            "large, dark chest",
+            "scrael",
+            "coffee",
+            "Tinu\u00eb",
+            "wasps",
+            "dried fruit",
+            "book",
+            "Some unlucky sod",
+            "old enemy",
+            "night",
+            "loaf of sugar",
+            "demon",
+            "black rock",
+            "stone walls",
+            "real world",
+            "Orrison boy",
+            "Kvothe the Bloodless",
+            "platters",
+            "lightning",
+            "red hair",
+            "loaf of bread",
+            "gut",
+            "lamb",
+            "bags of cinnamon",
+            "Orissons",
+            "harvest",
+            "master\u2019s knee",
+            "commander",
+            "bodies",
+            "oil",
+            "troupe",
+            "luck piece",
+            "head",
+            "Celum Tinture",
+            "bright feather",
+            "coals",
+            "wife",
+            "souls",
+            "heavy cloak",
+            "chest",
+            "lock of copper",
+            "Devan",
+            "fingers",
+            "CHAPTER FOUR",
+            "flame",
+            "neck",
+            "copper pots",
+            "finger",
+            "wagons",
+            "taxes",
+            "walnuts",
+            "city-licensed escort",
+            "elbow",
+            "summers",
+            "demons",
+            "Sweetmeats",
+            "sword",
+            "man",
+            "Caleb",
+            "bear",
+            "eyes",
+            "roads",
+            "spiders",
+            "shim",
+            "small cloth",
+            "eyelid",
+            "lamps",
+            "silver talents",
+            "parade",
+            "street",
+            "stories",
+            "barber\u2019s razor",
+            "food",
+            "Tinker",
+            "knife",
+            "Black pepper",
+            "rowan wood",
+            "Cendling night",
+            "wolves",
+            "Kvothe",
+            "fire",
+            "jokes",
+            "autumn air",
+            "boots",
+            "adults",
+            "sitting position",
+            "kings",
+            "spider",
+            "purse",
+            "bottle of alcohol",
+            "mountains",
+            "walls",
+            "circle of iron",
+            "wagon",
+            "hot meals",
+            "young master",
+            "stool",
+            "rain",
+            "cler",
+            "crow",
+            "CHAPTER FIVE",
+            "evening",
+            "Carter",
+            "Chapter thirteen",
+            "water",
+            "hive",
+            "rod of iron",
+            "horses",
+            "alchemist",
+            "Knife grinder",
+            "Tinker Tanner",
+            "potbelly",
+            "candy",
+            "meal",
+            "roah",
+            "poplar leaves",
+            "rocks",
+            "memory",
+            "cricket",
+            "Devan Lochees",
+            "furniture",
+            "shops",
+            "Cob",
+            "shims",
+            "coins",
+            "clover",
+            "tinder",
+            "hobbyhorse",
+            "leader",
+            "side of the road",
+            "front door",
+            "Willow-wand water-finder",
+            "dog",
+            "forge gloves",
+            "rutted dirt road",
+            "Old Cob",
+            "Menat",
+            "old man",
+            "barrels",
+            "saddlebags",
+            "bowl of stew",
+            "people",
+            "woodsmoke",
+            "streets",
+            "Duke",
+            "horse",
+            "wooden floor",
+            "iron shim",
+            "rowan",
+            "d",
+            "Janns",
+            "mushroom",
+            "forest",
+            "hood",
+            "scraeling",
+            "children",
+            "Leather",
+            "Imre",
+            "pants",
+            "bundled man",
+            "pile of coins"
+          ],
+          "relations": [
+            {
+              "subject": "friends",
+              "predicate": "jumped off",
+              "object": "stools"
+            },
+            {
+              "subject": "fire",
+              "predicate": "was not",
+              "object": "lamplight"
+            },
+            {
+              "subject": "red hair",
+              "predicate": "of",
+              "object": "master"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "bought",
+              "object": "scrael"
+            },
+            {
+              "subject": "room",
+              "predicate": "has",
+              "object": "furniture"
+            },
+            {
+              "subject": "private room",
+              "predicate": "costs",
+              "object": "copper"
+            },
+            {
+              "subject": "roah",
+              "predicate": "is",
+              "object": "wood"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "sold amulet to",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "mood",
+              "predicate": "in",
+              "object": "mood"
+            },
+            {
+              "subject": "copper pot",
+              "predicate": "simmer",
+              "object": "kitchen"
+            },
+            {
+              "subject": "iron",
+              "predicate": "is",
+              "object": "drab"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "peel away",
+              "object": "cloak"
+            },
+            {
+              "subject": "dirt road",
+              "predicate": "through",
+              "object": "town"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "refuse",
+              "object": "Tehlu"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "said",
+              "object": "Kote"
+            },
+            {
+              "subject": "Nelly",
+              "predicate": "killed",
+              "object": "town"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "read",
+              "object": "Celum Tinture"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "shuttered",
+              "object": "windows"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "called himself",
+              "object": "Kote"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "turned eyes to",
+              "object": "mounting board"
+            },
+            {
+              "subject": "priest",
+              "predicate": "seen",
+              "object": "demons"
+            },
+            {
+              "subject": "smith",
+              "predicate": "owns",
+              "object": "burlap sack"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "shared dinner with",
+              "object": "tinker"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "sold",
+              "object": "shears"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "traveling with",
+              "object": "Skarpi"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "gestured toward",
+              "object": "spoon"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "sold",
+              "object": "Limes"
+            },
+            {
+              "subject": "mercenaries",
+              "predicate": "put",
+              "object": "poultice"
+            },
+            {
+              "subject": "smith",
+              "predicate": "wore",
+              "object": "hair"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "saw",
+              "object": "stars"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "saw light through",
+              "object": "trees"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "schedule delay near",
+              "object": "Abbott\u2019s Ford"
+            },
+            {
+              "subject": "People",
+              "predicate": "chose",
+              "object": "tables"
+            },
+            {
+              "subject": "true-red hair",
+              "predicate": "red as",
+              "object": "flame"
+            },
+            {
+              "subject": "Old Cob",
+              "predicate": "told story about",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "Carter\u2019s wounds",
+              "predicate": "ensured",
+              "object": "stories"
+            },
+            {
+              "subject": "spiderweb",
+              "predicate": "clung",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "forge gloves",
+              "predicate": "belong to",
+              "object": "smith"
+            },
+            {
+              "subject": "Tehlu",
+              "predicate": "broke",
+              "object": "demons"
+            },
+            {
+              "subject": "smith\u2019s prentice",
+              "predicate": "from",
+              "object": "Rannish"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "killed",
+              "object": "things"
+            },
+            {
+              "subject": "black shapes",
+              "predicate": "size",
+              "object": "cart wheels"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "pushed back",
+              "object": "hood"
+            },
+            {
+              "subject": "young man",
+              "predicate": "enters",
+              "object": "room"
+            },
+            {
+              "subject": "Prices of rooms",
+              "predicate": "dickered",
+              "object": "room"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "worth",
+              "object": "iron penny"
+            },
+            {
+              "subject": "opportunists",
+              "predicate": "thick on",
+              "object": "roads"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "is",
+              "object": "Master Kote"
+            },
+            {
+              "subject": "linen cloth",
+              "predicate": "rubbing along",
+              "object": "grain"
+            },
+            {
+              "subject": "Shep",
+              "predicate": "said",
+              "object": "scrael"
+            },
+            {
+              "subject": "face",
+              "predicate": "smeared with",
+              "object": "blood"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "feels",
+              "object": "back of his head"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "teach",
+              "object": "Reshi"
+            },
+            {
+              "subject": "scrael",
+              "predicate": "would go through",
+              "object": "town"
+            },
+            {
+              "subject": "Penitent King",
+              "predicate": "having a difficult time with",
+              "object": "rebels"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "left",
+              "object": "note"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "looking for",
+              "object": "myth"
+            },
+            {
+              "subject": "bed",
+              "predicate": "has",
+              "object": "chest"
+            },
+            {
+              "subject": "shoulders",
+              "predicate": "part of",
+              "object": "innkeeper"
+            },
+            {
+              "subject": "Reshi",
+              "predicate": "is",
+              "object": "innkeeper"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "sells",
+              "object": "Sweetmeats"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "sold",
+              "object": "needles"
+            },
+            {
+              "subject": "Devan Lochees",
+              "predicate": "related to",
+              "object": "Duke"
+            },
+            {
+              "subject": "shirt",
+              "predicate": "is",
+              "object": "royal blue"
+            },
+            {
+              "subject": "leader",
+              "predicate": "gives",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "black shapes",
+              "predicate": "scuttling on",
+              "object": "leaves"
+            },
+            {
+              "subject": "chest",
+              "predicate": "at",
+              "object": "bed"
+            },
+            {
+              "subject": "strawberry wine",
+              "predicate": "on",
+              "object": "bottles"
+            },
+            {
+              "subject": "hooded figure",
+              "predicate": "shook",
+              "object": "hair"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "hear in",
+              "object": "stories"
+            },
+            {
+              "subject": "door",
+              "predicate": "opened",
+              "object": "Waystone"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "does",
+              "object": "scribing"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "was on",
+              "object": "road"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "knew",
+              "object": "Skarpi"
+            },
+            {
+              "subject": "saddlebags",
+              "predicate": "contains",
+              "object": "worldly possessions"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "owns",
+              "object": "purse"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "walked to",
+              "object": "Newarre"
+            },
+            {
+              "subject": "man",
+              "predicate": "asks about",
+              "object": "head wound"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are",
+              "object": "demons"
+            },
+            {
+              "subject": "books",
+              "predicate": "erased",
+              "object": "emptiness"
+            },
+            {
+              "subject": "Men",
+              "predicate": "moved",
+              "object": "chairs"
+            },
+            {
+              "subject": "Sleep",
+              "predicate": "met",
+              "object": "bed"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "make",
+              "object": "daughters"
+            },
+            {
+              "subject": "cudgel",
+              "predicate": "dropped to grate against",
+              "object": "stone"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "building up",
+              "object": "fire"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "locked",
+              "object": "door"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "killed",
+              "object": "angel"
+            },
+            {
+              "subject": "person",
+              "predicate": "called for",
+              "object": "drink"
+            },
+            {
+              "subject": "man",
+              "predicate": "wore",
+              "object": "heavy hooded cloak"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "said",
+              "object": "Melcombe"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "stood on",
+              "object": "counter"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "stepped into",
+              "object": "circle of firelight"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "has",
+              "object": "red hair"
+            },
+            {
+              "subject": "smith",
+              "predicate": "made",
+              "object": "rod of iron"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "worked with",
+              "object": "boy"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "puzzled",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "six friends",
+              "predicate": "talked about",
+              "object": "salt"
+            },
+            {
+              "subject": "roads",
+              "predicate": "bad",
+              "object": "roads"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "lost",
+              "object": "socks"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "sing",
+              "object": "souls"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "has",
+              "object": "enemies"
+            },
+            {
+              "subject": "officer",
+              "predicate": "checking",
+              "object": "hooves"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "waving",
+              "object": "people"
+            },
+            {
+              "subject": "Crazy Martin",
+              "predicate": "planted",
+              "object": "barley"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "replied",
+              "object": "Kvothe the Bloodless"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "corrected to",
+              "object": "Mhenka"
+            },
+            {
+              "subject": "night",
+              "predicate": "fell on",
+              "object": "road"
+            },
+            {
+              "subject": "demon",
+              "predicate": "are like",
+              "object": "Tehlu\u2019s angels"
+            },
+            {
+              "subject": "wives",
+              "predicate": "hid",
+              "object": "small bottles"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "in",
+              "object": "Waystone Inn"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "bought",
+              "object": "apron"
+            },
+            {
+              "subject": "sword",
+              "predicate": "leaned",
+              "object": "wall"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "decided on",
+              "object": "farmstead"
+            },
+            {
+              "subject": "old house",
+              "predicate": "was",
+              "object": "stone walls"
+            },
+            {
+              "subject": "door",
+              "predicate": "opened",
+              "object": "noise"
+            },
+            {
+              "subject": "man",
+              "predicate": "wears",
+              "object": "hood"
+            },
+            {
+              "subject": "noise",
+              "predicate": "poured into",
+              "object": "Waystone"
+            },
+            {
+              "subject": "travelsack",
+              "predicate": "contains",
+              "object": "oats"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "lowered",
+              "object": "lap"
+            },
+            {
+              "subject": "demons",
+              "predicate": "good for",
+              "object": "priest"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "pressed",
+              "object": "table"
+            },
+            {
+              "subject": "man",
+              "predicate": "brushed back",
+              "object": "hood"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "is",
+              "object": "Reshi"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "touched",
+              "object": "leg"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "jabbed",
+              "object": "spoon"
+            },
+            {
+              "subject": "fire",
+              "predicate": "destroys",
+              "object": "demons"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "asked",
+              "object": "Kote"
+            },
+            {
+              "subject": "travelers",
+              "predicate": "smelled of",
+              "object": "road dust"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "touched",
+              "object": "heart"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "made",
+              "object": "mounting board"
+            },
+            {
+              "subject": "man",
+              "predicate": "waiting to",
+              "object": "man"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "order",
+              "object": "mutton"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "uses",
+              "object": "pens"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "helped",
+              "object": "Reshi"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "led",
+              "object": "Tinker Tanner"
+            },
+            {
+              "subject": "Two men",
+              "predicate": "wagoneers",
+              "object": "wind"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "saw",
+              "object": "sky"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "said",
+              "object": "Graham"
+            },
+            {
+              "subject": "flat leather satchel",
+              "predicate": "contains",
+              "object": "pens"
+            },
+            {
+              "subject": "Nelly",
+              "predicate": "is",
+              "object": "lamb"
+            },
+            {
+              "subject": "lamplight",
+              "predicate": "turned",
+              "object": "window"
+            },
+            {
+              "subject": "inn",
+              "predicate": "has",
+              "object": "customers"
+            },
+            {
+              "subject": "Cob",
+              "predicate": "predicted",
+              "object": "third levy tax"
+            },
+            {
+              "subject": "Waystone Inn",
+              "predicate": "on",
+              "object": "dirt road"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "left",
+              "object": "road"
+            },
+            {
+              "subject": "fire",
+              "predicate": "was farther than",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "protect",
+              "object": "horse"
+            },
+            {
+              "subject": "travelers",
+              "predicate": "smelled of",
+              "object": "horses"
+            },
+            {
+              "subject": "blood",
+              "predicate": "spotted",
+              "object": "forehead"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "brought",
+              "object": "meal"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "should have bought",
+              "object": "scrael"
+            },
+            {
+              "subject": "Old Cob",
+              "predicate": "told",
+              "object": "Carter"
+            },
+            {
+              "subject": "demons",
+              "predicate": "not a place for",
+              "object": "demons"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "explaining",
+              "object": "master\u2019s knee"
+            },
+            {
+              "subject": "bottles",
+              "predicate": "erased",
+              "object": "emptiness"
+            },
+            {
+              "subject": "nails",
+              "predicate": "into",
+              "object": "wall"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "knows",
+              "object": "compelling lie"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "walked to",
+              "object": "smithy"
+            },
+            {
+              "subject": "roah",
+              "predicate": "prized by",
+              "object": "alchemists"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "eye",
+              "object": "scrael"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "stepped from",
+              "object": "hearth"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "plans to put in",
+              "object": "garden"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "has",
+              "object": "religion"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "went to",
+              "object": "bed"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "looks at",
+              "object": "fingers"
+            },
+            {
+              "subject": "man",
+              "predicate": "has",
+              "object": "hair"
+            },
+            {
+              "subject": "hands",
+              "predicate": "of",
+              "object": "man"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "has",
+              "object": "rye bread"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "see",
+              "object": "horses"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "followed",
+              "object": "fire"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "shouldered",
+              "object": "travelsack"
+            },
+            {
+              "subject": "man",
+              "predicate": "wearing",
+              "object": "shirt of heavy metal rings"
+            },
+            {
+              "subject": "Kvothe",
+              "predicate": "said",
+              "object": "Kvothe"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "lost",
+              "object": "dried fruit"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "appointment with",
+              "object": "Earl of Baedn-Bryt"
+            },
+            {
+              "subject": "hot knife",
+              "predicate": "goes through",
+              "object": "butter"
+            },
+            {
+              "subject": "Limes",
+              "predicate": "from",
+              "object": "Tinu\u00eb"
+            },
+            {
+              "subject": "town",
+              "predicate": "has",
+              "object": "streets"
+            },
+            {
+              "subject": "table",
+              "predicate": "knocked against",
+              "object": "wood"
+            },
+            {
+              "subject": "rebels",
+              "predicate": "in",
+              "object": "Resavek"
+            },
+            {
+              "subject": "cler",
+              "predicate": "levered himself up onto",
+              "object": "one elbow"
+            },
+            {
+              "subject": "fingers",
+              "predicate": "covered in",
+              "object": "blood"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "lost",
+              "object": "ivory dice"
+            },
+            {
+              "subject": "lover",
+              "predicate": "in",
+              "object": "bed"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "traded",
+              "object": "knives"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "touched",
+              "object": "forehead"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "told",
+              "object": "lies"
+            },
+            {
+              "subject": "children\u2019s song",
+              "predicate": "mentions",
+              "object": "Ash"
+            },
+            {
+              "subject": "black scabbard",
+              "predicate": "from",
+              "object": "mounting board\u2019s pegs"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "owns",
+              "object": "ring"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "set up",
+              "object": "sharpening wheel"
+            },
+            {
+              "subject": "observer",
+              "predicate": "might notice",
+              "object": "gaze"
+            },
+            {
+              "subject": "inn",
+              "predicate": "has",
+              "object": "bottle"
+            },
+            {
+              "subject": "table",
+              "predicate": "knocked over",
+              "object": "ground"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "has",
+              "object": "dried meat"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "knelt at",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "Reshi",
+              "predicate": "is",
+              "object": "Kote"
+            },
+            {
+              "subject": "worldly possessions",
+              "predicate": "on",
+              "object": "ground"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "guessed",
+              "object": "travelers"
+            },
+            {
+              "subject": "fire",
+              "predicate": "spat",
+              "object": "fire"
+            },
+            {
+              "subject": "young man",
+              "predicate": "walked to",
+              "object": "bed"
+            },
+            {
+              "subject": "object",
+              "predicate": "is",
+              "object": "Folly"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "found",
+              "object": "shim"
+            },
+            {
+              "subject": "Cob",
+              "predicate": "said",
+              "object": "iron"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "had",
+              "object": "business"
+            },
+            {
+              "subject": "mothers",
+              "predicate": "use",
+              "object": "children"
+            },
+            {
+              "subject": "night",
+              "predicate": "previous",
+              "object": "night"
+            },
+            {
+              "subject": "Eld",
+              "predicate": "happened",
+              "object": "summers"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "ate",
+              "object": "meal"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "asked",
+              "object": "iron"
+            },
+            {
+              "subject": "wood alcohol",
+              "predicate": "used for",
+              "object": "pens"
+            },
+            {
+              "subject": "walnuts",
+              "predicate": "on",
+              "object": "bar"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "knew",
+              "object": "hands"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "stay alive",
+              "object": "Reshi"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "has",
+              "object": "voice"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "paging through",
+              "object": "book"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "struck",
+              "object": "ground"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "settled outside",
+              "object": "Waystone"
+            },
+            {
+              "subject": "merchant",
+              "predicate": "asking price for",
+              "object": "sugar"
+            },
+            {
+              "subject": "Skarpi",
+              "predicate": "is friend of",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "sword",
+              "predicate": "shape",
+              "object": "sword"
+            },
+            {
+              "subject": "smith",
+              "predicate": "rekindling",
+              "object": "forge"
+            },
+            {
+              "subject": "grandparents",
+              "predicate": "chanted",
+              "object": "children"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "repacked",
+              "object": "travelsack"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "used",
+              "object": "iron"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "has appointment with",
+              "object": "Earl of Baedn-Bryt"
+            },
+            {
+              "subject": "Cealdish merchant",
+              "predicate": "name is",
+              "object": "Deolan"
+            },
+            {
+              "subject": "collar",
+              "predicate": "attached to",
+              "object": "wooden handle"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "traded",
+              "object": "bags of cinnamon"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "walked through",
+              "object": "doorway"
+            },
+            {
+              "subject": "Nelly",
+              "predicate": "fell on",
+              "object": "scrael"
+            },
+            {
+              "subject": "leader",
+              "predicate": "expresses",
+              "object": "sentiment"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "shouldered",
+              "object": "satchel"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "came down",
+              "object": "stairs"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "lives at",
+              "object": "Waystone"
+            },
+            {
+              "subject": "Minor necessities",
+              "predicate": "brought in from",
+              "object": "saddlebags"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "wants",
+              "object": "apron"
+            },
+            {
+              "subject": "Waystone",
+              "predicate": "contains",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "worldly possessions",
+              "predicate": "are",
+              "object": "flat leather satchel"
+            },
+            {
+              "subject": "iron",
+              "predicate": "kills",
+              "object": "demons"
+            },
+            {
+              "subject": "snow",
+              "predicate": "came",
+              "object": "snow"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "blundering through",
+              "object": "trees"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "washed",
+              "object": "bar"
+            },
+            {
+              "subject": "man",
+              "predicate": "wearing",
+              "object": "heavy cloak"
+            },
+            {
+              "subject": "Liquor",
+              "predicate": "from",
+              "object": "bottle"
+            },
+            {
+              "subject": "scythe blade\u2019s collar",
+              "predicate": "onto",
+              "object": "wooden handle"
+            },
+            {
+              "subject": "Men",
+              "predicate": "moved",
+              "object": "tables"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "struck by",
+              "object": "black shapes"
+            },
+            {
+              "subject": "fire",
+              "predicate": "cracked",
+              "object": "fire"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "ready with",
+              "object": "drink"
+            },
+            {
+              "subject": "pot",
+              "predicate": "hanging over",
+              "object": "cook fire"
+            },
+            {
+              "subject": "silver talent",
+              "predicate": "is a",
+              "object": "luck piece"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "owns",
+              "object": "horse and cart"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "touched",
+              "object": "wrist"
+            },
+            {
+              "subject": "flat leather satchel",
+              "predicate": "contains",
+              "object": "paper"
+            },
+            {
+              "subject": "children\u2019s song",
+              "predicate": "mentions",
+              "object": "elm"
+            },
+            {
+              "subject": "hood",
+              "predicate": "hides",
+              "object": "face"
+            },
+            {
+              "subject": "left arm",
+              "predicate": "dark and wet with",
+              "object": "blood"
+            },
+            {
+              "subject": "bottle",
+              "predicate": "is in",
+              "object": "bar"
+            },
+            {
+              "subject": "ring of metal",
+              "predicate": "is made of",
+              "object": "iron"
+            },
+            {
+              "subject": "young man",
+              "predicate": "carrying",
+              "object": "bowl of stew"
+            },
+            {
+              "subject": "spider",
+              "predicate": "is as large as",
+              "object": "wagon wheel"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "wears around",
+              "object": "neck"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "on way through",
+              "object": "Eld"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "came from",
+              "object": "kitchen"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "trusts",
+              "object": "Bast"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "brushed",
+              "object": "red hair"
+            },
+            {
+              "subject": "innkeep",
+              "predicate": "pulled",
+              "object": "Shep"
+            },
+            {
+              "subject": "children",
+              "predicate": "making",
+              "object": "parade"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "said",
+              "object": "scrael"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "has",
+              "object": "bootlaces"
+            },
+            {
+              "subject": "furniture",
+              "predicate": "is",
+              "object": "narrow bed"
+            },
+            {
+              "subject": "weather",
+              "predicate": "ideal for ripening",
+              "object": "field of wheat"
+            },
+            {
+              "subject": "fruit",
+              "predicate": "set on",
+              "object": "platters"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "made sure",
+              "object": "rowan wood"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "has",
+              "object": "eyes"
+            },
+            {
+              "subject": "two-wheel mule cart",
+              "predicate": "through",
+              "object": "town\u2019s streets"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "owns",
+              "object": "inn"
+            },
+            {
+              "subject": "six friends",
+              "predicate": "talked about",
+              "object": "merchants"
+            },
+            {
+              "subject": "scrael",
+              "predicate": "got on",
+              "object": "Carter"
+            },
+            {
+              "subject": "Kvothe Kingkiller",
+              "predicate": "are",
+              "object": "men"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "in",
+              "object": "room"
+            },
+            {
+              "subject": "bottle",
+              "predicate": "contains",
+              "object": "wood alcohol"
+            },
+            {
+              "subject": "fingers",
+              "predicate": "found",
+              "object": "shim"
+            },
+            {
+              "subject": "scrael",
+              "predicate": "came after",
+              "object": "Carter"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "glanced into",
+              "object": "forest"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "watching",
+              "object": "fire"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "fell",
+              "object": "sky"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "into",
+              "object": "chair"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "caught",
+              "object": "burning hair"
+            },
+            {
+              "subject": "miller",
+              "predicate": "set",
+              "object": "waterwheel"
+            },
+            {
+              "subject": "People",
+              "predicate": "threw",
+              "object": "coats"
+            },
+            {
+              "subject": "Men",
+              "predicate": "suit",
+              "object": "group"
+            },
+            {
+              "subject": "smith",
+              "predicate": "owns",
+              "object": "shop"
+            },
+            {
+              "subject": "ear",
+              "predicate": "part of",
+              "object": "head"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "encouraged",
+              "object": "demon"
+            },
+            {
+              "subject": "man",
+              "predicate": "cooking in",
+              "object": "iron pot"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "in",
+              "object": "Newarre"
+            },
+            {
+              "subject": "Waystone",
+              "predicate": "for",
+              "object": "dinner"
+            },
+            {
+              "subject": "old enemy",
+              "predicate": "sitting in",
+              "object": "room"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "was proud of",
+              "object": "bed"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "has",
+              "object": "rose water"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "tended to",
+              "object": "travelers"
+            },
+            {
+              "subject": "man",
+              "predicate": "has",
+              "object": "blanket"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "was in",
+              "object": "room"
+            },
+            {
+              "subject": "Folly",
+              "predicate": "is",
+              "object": "sword"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "came down",
+              "object": "Waystone Inn"
+            },
+            {
+              "subject": "stories",
+              "predicate": "paint",
+              "object": "red-handed killer"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "wears",
+              "object": "apron"
+            },
+            {
+              "subject": "roads",
+              "predicate": "like",
+              "object": "winter"
+            },
+            {
+              "subject": "black shapes",
+              "predicate": "moved",
+              "object": "ground"
+            },
+            {
+              "subject": "horse",
+              "predicate": "has",
+              "object": "hooves"
+            },
+            {
+              "subject": "floor",
+              "predicate": "underfoot",
+              "object": "floor"
+            },
+            {
+              "subject": "Waystone",
+              "predicate": "for",
+              "object": "drinks"
+            },
+            {
+              "subject": "black shapes",
+              "predicate": "moved like",
+              "object": "cricket"
+            },
+            {
+              "subject": "barrels",
+              "predicate": "behind",
+              "object": "bar"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "bought",
+              "object": "shirt"
+            },
+            {
+              "subject": "heavy cloak",
+              "predicate": "hangs off",
+              "object": "body"
+            },
+            {
+              "subject": "stone hearth",
+              "predicate": "held",
+              "object": "fire"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "used",
+              "object": "money"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "gave",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "Children",
+              "predicate": "begging for",
+              "object": "stories"
+            },
+            {
+              "subject": "Folly",
+              "predicate": "beneath",
+              "object": "sword"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "grind",
+              "object": "knife"
+            },
+            {
+              "subject": "men",
+              "predicate": "inside",
+              "object": "inn"
+            },
+            {
+              "subject": "children",
+              "predicate": "formed",
+              "object": "circle"
+            },
+            {
+              "subject": "roads",
+              "predicate": "getting worse",
+              "object": "roads"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "twisted",
+              "object": "wire"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "setting",
+              "object": "mounting board"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "in",
+              "object": "town"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "asked about",
+              "object": "woman"
+            },
+            {
+              "subject": "man",
+              "predicate": "pressed ahead",
+              "object": "man"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "came down",
+              "object": "stairs"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "searched for",
+              "object": "horses"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "wash",
+              "object": "bottles"
+            },
+            {
+              "subject": "mounting board",
+              "predicate": "on",
+              "object": "wall"
+            },
+            {
+              "subject": "man",
+              "predicate": "cut",
+              "object": "ash"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "tends",
+              "object": "inn"
+            },
+            {
+              "subject": "hair",
+              "predicate": "is",
+              "object": "blood"
+            },
+            {
+              "subject": "Hay",
+              "predicate": "taken to",
+              "object": "horses"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "read",
+              "object": "The Mating Habits of the Common Draccus"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "knew",
+              "object": "stars"
+            },
+            {
+              "subject": "room",
+              "predicate": "has",
+              "object": "chairs"
+            },
+            {
+              "subject": "weather",
+              "predicate": "ideal for ripening",
+              "object": "corn"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "bring",
+              "object": "Skarpi"
+            },
+            {
+              "subject": "Children",
+              "predicate": "begging for",
+              "object": "candy"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "tapped",
+              "object": "cheek"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "slung",
+              "object": "Chronicler\u2019s limp body"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "learns from",
+              "object": "master"
+            },
+            {
+              "subject": "scalp",
+              "predicate": "part of",
+              "object": "head"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "made it back to",
+              "object": "Newarre"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "pointed out",
+              "object": "scrael"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "has",
+              "object": "small cloth"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "called",
+              "object": "Kote"
+            },
+            {
+              "subject": "crucible",
+              "predicate": "cooled",
+              "object": "sword"
+            },
+            {
+              "subject": "farm",
+              "predicate": "happened",
+              "object": "Cendling night"
+            },
+            {
+              "subject": "merchant",
+              "predicate": "asking price for",
+              "object": "salt"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "said",
+              "object": "Reshi"
+            },
+            {
+              "subject": "mounting board",
+              "predicate": "atop",
+              "object": "oak barrels"
+            },
+            {
+              "subject": "Orrison boy",
+              "predicate": "stopped by",
+              "object": "mutton"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "wiped",
+              "object": "bottles"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "lit",
+              "object": "lamps"
+            },
+            {
+              "subject": "two-wheel mule cart",
+              "predicate": "walked through",
+              "object": "streets"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "knows",
+              "object": "entertaining story"
+            },
+            {
+              "subject": "hands",
+              "predicate": "resting",
+              "object": "lap"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "backed into",
+              "object": "inn"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "sold",
+              "object": "polished horn"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "asked about",
+              "object": "Nighmane"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "heading to",
+              "object": "Tinu\u00eb"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "near",
+              "object": "bonfire"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "took",
+              "object": "sword"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "eyed",
+              "object": "cheeks"
+            },
+            {
+              "subject": "sword",
+              "predicate": "set on",
+              "object": "mounting board"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "brought bowl to",
+              "object": "master\u2019s room"
+            },
+            {
+              "subject": "People",
+              "predicate": "see",
+              "object": "horse"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "listens to",
+              "object": "Cob"
+            },
+            {
+              "subject": "flame",
+              "predicate": "revealed",
+              "object": "wounds"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "name",
+              "object": "Devan"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "laughed at",
+              "object": "jokes"
+            },
+            {
+              "subject": "People",
+              "predicate": "called for",
+              "object": "drinks"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "laid",
+              "object": "arm"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "finished",
+              "object": "Kote"
+            },
+            {
+              "subject": "man",
+              "predicate": "unbuckled",
+              "object": "sword"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "took",
+              "object": "spoon"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "is",
+              "object": "Kvothe the Bloodless"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "slashed with",
+              "object": "barber\u2019s razor"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "took in",
+              "object": "world"
+            },
+            {
+              "subject": "beer",
+              "predicate": "costs",
+              "object": "shims"
+            },
+            {
+              "subject": "girl",
+              "predicate": "in",
+              "object": "circle"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "came to",
+              "object": "stairs"
+            },
+            {
+              "subject": "stairs",
+              "predicate": "part of",
+              "object": "room"
+            },
+            {
+              "subject": "table",
+              "predicate": "is near",
+              "object": "Melcombe"
+            },
+            {
+              "subject": "cler",
+              "predicate": "looked at",
+              "object": "fingers"
+            },
+            {
+              "subject": "Devan",
+              "predicate": "name",
+              "object": "Devan Lochees"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "near",
+              "object": "fireplace"
+            },
+            {
+              "subject": "thumb",
+              "predicate": "worth",
+              "object": "gold"
+            },
+            {
+              "subject": "king\u2019s army",
+              "predicate": "paying for",
+              "object": "horse"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "heard of",
+              "object": "Scrael"
+            },
+            {
+              "subject": "room",
+              "predicate": "has",
+              "object": "bed"
+            },
+            {
+              "subject": "Caleb",
+              "predicate": "is",
+              "object": "smith"
+            },
+            {
+              "subject": "chair",
+              "predicate": "in front of",
+              "object": "fire"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "owns",
+              "object": "purse"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "washed",
+              "object": "tables"
+            },
+            {
+              "subject": "chest",
+              "predicate": "has",
+              "object": "lock of iron"
+            },
+            {
+              "subject": "narrow bed",
+              "predicate": "has",
+              "object": "large, dark chest"
+            },
+            {
+              "subject": "six friends",
+              "predicate": "bought",
+              "object": "piece of cold-wrought iron"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "has",
+              "object": "salt"
+            },
+            {
+              "subject": "tables",
+              "predicate": "not used in",
+              "object": "bar"
+            },
+            {
+              "subject": "man",
+              "predicate": "cut",
+              "object": "rowan"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "is in",
+              "object": "sitting position"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "removed",
+              "object": "leather blacksmith\u2019s apron"
+            },
+            {
+              "subject": "footprints of lamplight",
+              "predicate": "fell across",
+              "object": "dirt road"
+            },
+            {
+              "subject": "stool",
+              "predicate": "behind",
+              "object": "bar"
+            },
+            {
+              "subject": "caravan",
+              "predicate": "had",
+              "object": "guards"
+            },
+            {
+              "subject": "Friendly arguments",
+              "predicate": "started",
+              "object": "room"
+            },
+            {
+              "subject": "leather apron",
+              "predicate": "belong to",
+              "object": "smith"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "thought",
+              "object": "mountains"
+            },
+            {
+              "subject": "Leather",
+              "predicate": "creaking",
+              "object": "Leather"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "brought",
+              "object": "master\u2019s room"
+            },
+            {
+              "subject": "fireplace",
+              "predicate": "made of",
+              "object": "black rock"
+            },
+            {
+              "subject": "wood",
+              "predicate": "produced",
+              "object": "smoke"
+            },
+            {
+              "subject": "wood",
+              "predicate": "produced",
+              "object": "leather"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "held",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "roah",
+              "predicate": "prized by",
+              "object": "perfumers"
+            },
+            {
+              "subject": "figure",
+              "predicate": "held",
+              "object": "cudgel"
+            },
+            {
+              "subject": "demon",
+              "predicate": "are like",
+              "object": "kings"
+            },
+            {
+              "subject": "rutted dirt road",
+              "predicate": "was in",
+              "object": "dark"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "saw",
+              "object": "fire"
+            },
+            {
+              "subject": "men",
+              "predicate": "huddled at",
+              "object": "corner of the bar"
+            },
+            {
+              "subject": "discussion",
+              "predicate": "turned to",
+              "object": "matters"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "in",
+              "object": "inn"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "said",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "sickle blades",
+              "predicate": "glittering",
+              "object": "sickle blades"
+            },
+            {
+              "subject": "Cob",
+              "predicate": "complained about",
+              "object": "trader"
+            },
+            {
+              "subject": "six friends",
+              "predicate": "seen",
+              "object": "thing"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "commanded",
+              "object": "stone"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "in",
+              "object": "room"
+            },
+            {
+              "subject": "Bottles",
+              "predicate": "to be",
+              "object": "Bottles"
+            },
+            {
+              "subject": "dark thing",
+              "predicate": "on",
+              "object": "table"
+            },
+            {
+              "subject": "fire",
+              "predicate": "into",
+              "object": "woods"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "looked out",
+              "object": "window"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "worth",
+              "object": "silver penny"
+            },
+            {
+              "subject": "wood",
+              "predicate": "produced",
+              "object": "clover"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "has",
+              "object": "clothes"
+            },
+            {
+              "subject": "ring",
+              "predicate": "contains",
+              "object": "silver"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "hung",
+              "object": "black scabbard"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "nodded towards",
+              "object": "Waystone"
+            },
+            {
+              "subject": "swords",
+              "predicate": "are in",
+              "object": "town"
+            },
+            {
+              "subject": "smoke",
+              "predicate": "resembles",
+              "object": "old leather"
+            },
+            {
+              "subject": "people",
+              "predicate": "locking",
+              "object": "doors"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "lost",
+              "object": "needles"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "taught by",
+              "object": "grandfather"
+            },
+            {
+              "subject": "girl",
+              "predicate": "put hand over",
+              "object": "eyes"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "sat behind",
+              "object": "bar"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "heard of",
+              "object": "Melcombe"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "has",
+              "object": "face"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "listens to",
+              "object": "Cob"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "broke",
+              "object": "table"
+            },
+            {
+              "subject": "trader",
+              "predicate": "came through",
+              "object": "room"
+            },
+            {
+              "subject": "bundle of coins",
+              "predicate": "baked into",
+              "object": "loaf of bread"
+            },
+            {
+              "subject": "Two young men",
+              "predicate": "hook up with",
+              "object": "group"
+            },
+            {
+              "subject": "place in Imre",
+              "predicate": "has",
+              "object": "cobblestones"
+            },
+            {
+              "subject": "old lover",
+              "predicate": "at",
+              "object": "formal dinner"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "is",
+              "object": "terror"
+            },
+            {
+              "subject": "scars",
+              "predicate": "like",
+              "object": "lightning"
+            },
+            {
+              "subject": "lady",
+              "predicate": "wash in",
+              "object": "water"
+            },
+            {
+              "subject": "cudgel",
+              "predicate": "is not",
+              "object": "firewood"
+            },
+            {
+              "subject": "man",
+              "predicate": "without",
+              "object": "face"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "was looking for",
+              "object": "legend"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "said",
+              "object": "Boy"
+            },
+            {
+              "subject": "Waystone",
+              "predicate": "was",
+              "object": "Waystone"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "said to",
+              "object": "Cob"
+            },
+            {
+              "subject": "wood",
+              "predicate": "has",
+              "object": "aroma of citrus"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "closing",
+              "object": "door"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "corrected",
+              "object": "Meneras"
+            },
+            {
+              "subject": "arms",
+              "predicate": "part of",
+              "object": "innkeeper"
+            },
+            {
+              "subject": "old enemy",
+              "predicate": "sitting in",
+              "object": "alehouse"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "read",
+              "object": "book"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "appointment location",
+              "object": "Treya"
+            },
+            {
+              "subject": "Kvothe",
+              "predicate": "is",
+              "object": "Kvothe"
+            },
+            {
+              "subject": "autumn days",
+              "predicate": "common in",
+              "object": "stories"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "warming",
+              "object": "fire"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "pushed through",
+              "object": "bloodred sumac"
+            },
+            {
+              "subject": "Nelly",
+              "predicate": "killed",
+              "object": "Oldstone Bridge"
+            },
+            {
+              "subject": "group",
+              "predicate": "of",
+              "object": "dozen people"
+            },
+            {
+              "subject": "parade",
+              "predicate": "walked down",
+              "object": "street"
+            },
+            {
+              "subject": "linen cloth",
+              "predicate": "rubbing along",
+              "object": "bar"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "is",
+              "object": "Reshi"
+            },
+            {
+              "subject": "wind",
+              "predicate": "obeyed",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "pulled",
+              "object": "stool"
+            },
+            {
+              "subject": "thing",
+              "predicate": "burned and buried",
+              "object": "thing"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "paid",
+              "object": "talents"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "protect",
+              "object": "mad dogs"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "pressed",
+              "object": "shim"
+            },
+            {
+              "subject": "bar",
+              "predicate": "decorated with",
+              "object": "bottles"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "traded",
+              "object": "buttons"
+            },
+            {
+              "subject": "eye",
+              "predicate": "of",
+              "object": "old enemy"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "asked",
+              "object": "innkeeper"
+            },
+            {
+              "subject": "Waystone",
+              "predicate": "contains",
+              "object": "forge"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "has",
+              "object": "hair"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "is against",
+              "object": "wall"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "clapped",
+              "object": "back"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "trusts",
+              "object": "Reshi"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "stood",
+              "object": "stairs"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "speaks",
+              "object": "Temic"
+            },
+            {
+              "subject": "officer",
+              "predicate": "checking",
+              "object": "harness"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "traded",
+              "object": "salt"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "drew",
+              "object": "autumn air"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "protect",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "called",
+              "object": "Kote"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "said",
+              "object": "scrael"
+            },
+            {
+              "subject": "black shapes",
+              "predicate": "scuttling on",
+              "object": "roots"
+            },
+            {
+              "subject": "door",
+              "predicate": "leads to",
+              "object": "room"
+            },
+            {
+              "subject": "mounting board",
+              "predicate": "from",
+              "object": "Aryen"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "searched in",
+              "object": "Rannish"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "seen",
+              "object": "thing"
+            },
+            {
+              "subject": "bed",
+              "predicate": "has",
+              "object": "mattress"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "hung",
+              "object": "mounting board"
+            },
+            {
+              "subject": "worldly possessions",
+              "predicate": "are",
+              "object": "blankets"
+            },
+            {
+              "subject": "Nelly",
+              "predicate": "is",
+              "object": "horse"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "asked by",
+              "object": "Kote"
+            },
+            {
+              "subject": "hair",
+              "predicate": "is in",
+              "object": "firelight"
+            },
+            {
+              "subject": "purse",
+              "predicate": "on",
+              "object": "table"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "polish",
+              "object": "bottles"
+            },
+            {
+              "subject": "room",
+              "predicate": "has",
+              "object": "black stone fireplace"
+            },
+            {
+              "subject": "sumac",
+              "predicate": "encroaching on",
+              "object": "road"
+            },
+            {
+              "subject": "Janns",
+              "predicate": "has",
+              "object": "blankets"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "is",
+              "object": "myth"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "visit",
+              "object": "earl"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "walked",
+              "object": "two-wheel mule cart"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "way into",
+              "object": "common room"
+            },
+            {
+              "subject": "smith",
+              "predicate": "sold",
+              "object": "coin"
+            },
+            {
+              "subject": "scythe blade",
+              "predicate": "has part",
+              "object": "collar"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "said about",
+              "object": "horse"
+            },
+            {
+              "subject": "Cealdish merchant",
+              "predicate": "gave money to",
+              "object": "Kote"
+            },
+            {
+              "subject": "group",
+              "predicate": "on",
+              "object": "road"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "knows",
+              "object": "history"
+            },
+            {
+              "subject": "chest",
+              "predicate": "has",
+              "object": "lock of copper"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "topped off",
+              "object": "oil"
+            },
+            {
+              "subject": "eye",
+              "predicate": "of",
+              "object": "old lover"
+            },
+            {
+              "subject": "merchant",
+              "predicate": "had",
+              "object": "coffee"
+            },
+            {
+              "subject": "children\u2019s song",
+              "predicate": "mentions",
+              "object": "pit"
+            },
+            {
+              "subject": "oaks",
+              "predicate": "reluctant to give up",
+              "object": "summer"
+            },
+            {
+              "subject": "road",
+              "predicate": "on sides of",
+              "object": "trees"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are",
+              "object": "spirits"
+            },
+            {
+              "subject": "commander",
+              "predicate": "puts",
+              "object": "saddlebag"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "waving",
+              "object": "note"
+            },
+            {
+              "subject": "people",
+              "predicate": "looking in",
+              "object": "purses"
+            },
+            {
+              "subject": "man",
+              "predicate": "rubbed at",
+              "object": "hair"
+            },
+            {
+              "subject": "man",
+              "predicate": "is",
+              "object": "educated man"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "is",
+              "object": "Cut cork"
+            },
+            {
+              "subject": "river-smooth stone",
+              "predicate": "heavy as",
+              "object": "river-smooth stone"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "steer",
+              "object": "Carter"
+            },
+            {
+              "subject": "Chronicler\u2019s limp body",
+              "predicate": "across",
+              "object": "shoulders"
+            },
+            {
+              "subject": "Taborlin the Great",
+              "predicate": "called up",
+              "object": "fire"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "killed",
+              "object": "men"
+            },
+            {
+              "subject": "Lunch",
+              "predicate": "to be",
+              "object": "Lunch"
+            },
+            {
+              "subject": "smith\u2019s prentice",
+              "predicate": "hit",
+              "object": "table"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "call",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "needs",
+              "object": "hot meals"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "hold",
+              "object": "story"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "touched",
+              "object": "throat"
+            },
+            {
+              "subject": "mouth",
+              "predicate": "of",
+              "object": "Reshi"
+            },
+            {
+              "subject": "black shapes",
+              "predicate": "scuttling on",
+              "object": "rocks"
+            },
+            {
+              "subject": "legs",
+              "predicate": "twisted",
+              "object": "chair"
+            },
+            {
+              "subject": "bloodred sumac",
+              "predicate": "at",
+              "object": "side of the road"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are",
+              "object": "men"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "poked",
+              "object": "stew"
+            },
+            {
+              "subject": "smith\u2019s prentice",
+              "predicate": "said",
+              "object": "table"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "picked up",
+              "object": "rod of iron"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "flicked",
+              "object": "Bast"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "killed",
+              "object": "Carter"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "ate",
+              "object": "dinner"
+            },
+            {
+              "subject": "people",
+              "predicate": "barring",
+              "object": "doors"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "pounded",
+              "object": "nails"
+            },
+            {
+              "subject": "bag of flat river stones",
+              "predicate": "upended onto",
+              "object": "tabletop"
+            },
+            {
+              "subject": "head",
+              "predicate": "part of",
+              "object": "innkeeper"
+            },
+            {
+              "subject": "great lovers",
+              "predicate": "have",
+              "object": "great scholars"
+            },
+            {
+              "subject": "Kvothe the Arcane",
+              "predicate": "are",
+              "object": "men"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "use",
+              "object": "iron things"
+            },
+            {
+              "subject": "Reshi",
+              "predicate": "sank into",
+              "object": "chair"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "was under",
+              "object": "bed"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "emptied",
+              "object": "purse"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "pressed",
+              "object": "iron shim"
+            },
+            {
+              "subject": "smith",
+              "predicate": "wore",
+              "object": "beard"
+            },
+            {
+              "subject": "scrael",
+              "predicate": "jumped out of",
+              "object": "Nelly"
+            },
+            {
+              "subject": "footprints of lamplight",
+              "predicate": "fell across",
+              "object": "smithy"
+            },
+            {
+              "subject": "deserter soldiers",
+              "predicate": "thick on",
+              "object": "roads"
+            },
+            {
+              "subject": "ex-soldiers",
+              "predicate": "with",
+              "object": "hunting bows"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "wants",
+              "object": "forge gloves"
+            },
+            {
+              "subject": "merchant",
+              "predicate": "didnt have",
+              "object": "cinnamon"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are",
+              "object": "Demons"
+            },
+            {
+              "subject": "merchant",
+              "predicate": "didnt have",
+              "object": "chocolate"
+            },
+            {
+              "subject": "clatter",
+              "predicate": "expects from",
+              "object": "drinking house"
+            },
+            {
+              "subject": "bottles",
+              "predicate": "nestled between",
+              "object": "barrels"
+            },
+            {
+              "subject": "knives",
+              "predicate": "on",
+              "object": "belts"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "lifted",
+              "object": "eyelid"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "reached into",
+              "object": "pocket"
+            },
+            {
+              "subject": "Waystone Inn",
+              "predicate": "has",
+              "object": "Cob"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "sold",
+              "object": "copper pots"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "has",
+              "object": "hands"
+            },
+            {
+              "subject": "bed",
+              "predicate": "is",
+              "object": "cot"
+            },
+            {
+              "subject": "chest",
+              "predicate": "made of",
+              "object": "roah"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "walked to",
+              "object": "door"
+            },
+            {
+              "subject": "oldest son",
+              "predicate": "took",
+              "object": "king"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "injured",
+              "object": "skull"
+            },
+            {
+              "subject": "legs",
+              "predicate": "belong to",
+              "object": "legs"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "leave",
+              "object": "town"
+            },
+            {
+              "subject": "smith",
+              "predicate": "is",
+              "object": "Caleb"
+            },
+            {
+              "subject": "bonfire",
+              "predicate": "roaring in",
+              "object": "ruins"
+            },
+            {
+              "subject": "Kvothe",
+              "predicate": "is",
+              "object": "Kote"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "set",
+              "object": "satchel"
+            },
+            {
+              "subject": "mortal",
+              "predicate": "kindle",
+              "object": "tinder"
+            },
+            {
+              "subject": "inn",
+              "predicate": "has",
+              "object": "bar"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "decided on",
+              "object": "fire"
+            },
+            {
+              "subject": "Men",
+              "predicate": "laughing",
+              "object": "Men"
+            },
+            {
+              "subject": "Shep",
+              "predicate": "listens to",
+              "object": "Cob"
+            },
+            {
+              "subject": "caravan",
+              "predicate": "had",
+              "object": "wagons"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "protect",
+              "object": "bandits"
+            },
+            {
+              "subject": "Three guards",
+              "predicate": "smelling of",
+              "object": "iron"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "attacked by",
+              "object": "scraeling"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "picked up",
+              "object": "spade"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "lost",
+              "object": "loaf of sugar"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "said to",
+              "object": "Bast"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "drew",
+              "object": "sword"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "in",
+              "object": "Treya"
+            },
+            {
+              "subject": "arrow",
+              "predicate": "in",
+              "object": "knee"
+            },
+            {
+              "subject": "demon",
+              "predicate": "are like",
+              "object": "heroes"
+            },
+            {
+              "subject": "door",
+              "predicate": "locked",
+              "object": "inn"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "abandoned",
+              "object": "Newarre"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "wears",
+              "object": "ring"
+            },
+            {
+              "subject": "man",
+              "predicate": "bundled up for",
+              "object": "winter"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "attacked",
+              "object": "Carter"
+            },
+            {
+              "subject": "Baths",
+              "predicate": "requested",
+              "object": "water"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "tended to",
+              "object": "inn"
+            },
+            {
+              "subject": "master\u2019s knee",
+              "predicate": "swollen",
+              "object": "stairs"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "daubed",
+              "object": "shirt"
+            },
+            {
+              "subject": "mahogany",
+              "predicate": "gleamed in",
+              "object": "lamplight"
+            },
+            {
+              "subject": "silver talent",
+              "predicate": "hidden in",
+              "object": "jar of ink"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "in",
+              "object": "Newarre"
+            },
+            {
+              "subject": "scrael",
+              "predicate": "goes through",
+              "object": "farmers"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "watched",
+              "object": "master"
+            },
+            {
+              "subject": "student",
+              "predicate": "is",
+              "object": "Bast"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "lost",
+              "object": "bottle of alcohol"
+            },
+            {
+              "subject": "People",
+              "predicate": "dropped",
+              "object": "bundles of belongings"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "standing on",
+              "object": "counter"
+            },
+            {
+              "subject": "scars",
+              "predicate": "smooth",
+              "object": "fire"
+            },
+            {
+              "subject": "commander",
+              "predicate": "calls",
+              "object": "reasonable fellow"
+            },
+            {
+              "subject": "red light",
+              "predicate": "traced",
+              "object": "body"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "set on",
+              "object": "tables"
+            },
+            {
+              "subject": "officer",
+              "predicate": "looked over",
+              "object": "horse"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "interviewed",
+              "object": "Oren Velciter"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "scowling down into",
+              "object": "stew"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "threaded",
+              "object": "bone needle"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "said to",
+              "object": "Jake"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "said",
+              "object": "scrael"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "entered",
+              "object": "inn"
+            },
+            {
+              "subject": "back",
+              "predicate": "part of",
+              "object": "innkeeper"
+            },
+            {
+              "subject": "Kvothe",
+              "predicate": "tricked",
+              "object": "demon"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "told story to",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "six friends",
+              "predicate": "talked about",
+              "object": "levies"
+            },
+            {
+              "subject": "Arrow",
+              "predicate": "in",
+              "object": "leg"
+            },
+            {
+              "subject": "wasps",
+              "predicate": "from",
+              "object": "hive"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "watching",
+              "object": "Chronicler"
+            },
+            {
+              "subject": "stone hearth",
+              "predicate": "held",
+              "object": "heat"
+            },
+            {
+              "subject": "six friends",
+              "predicate": "talked about",
+              "object": "winter"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "bought",
+              "object": "gloves"
+            },
+            {
+              "subject": "scrael",
+              "predicate": "are like",
+              "object": "wasps"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "drew",
+              "object": "chair"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "set",
+              "object": "bottles"
+            },
+            {
+              "subject": "black shapes",
+              "predicate": "rushed into",
+              "object": "firelight"
+            },
+            {
+              "subject": "red-haired man",
+              "predicate": "is",
+              "object": "innkeeper"
+            },
+            {
+              "subject": "officer",
+              "predicate": "checking",
+              "object": "teeth"
+            },
+            {
+              "subject": "man",
+              "predicate": "has",
+              "object": "clothes"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "swept",
+              "object": "floor"
+            },
+            {
+              "subject": "man",
+              "predicate": "holding",
+              "object": "iron cudgel"
+            },
+            {
+              "subject": "Kvothe",
+              "predicate": "fought",
+              "object": "angel"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "knew name of",
+              "object": "wind"
+            },
+            {
+              "subject": "books",
+              "predicate": "erased",
+              "object": "ache"
+            },
+            {
+              "subject": "royal-blue shirt",
+              "predicate": "put into",
+              "object": "saddlebag"
+            },
+            {
+              "subject": "demons",
+              "predicate": "fear",
+              "object": "cold iron"
+            },
+            {
+              "subject": "fire",
+              "predicate": "was not",
+              "object": "campfire"
+            },
+            {
+              "subject": "ring of metal",
+              "predicate": "hangs from",
+              "object": "leather cord"
+            },
+            {
+              "subject": "Taborlin the Great",
+              "predicate": "subject of story told by",
+              "object": "Cob"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "sent",
+              "object": "Bast"
+            },
+            {
+              "subject": "shirt",
+              "predicate": "is",
+              "object": "linen"
+            },
+            {
+              "subject": "Jake",
+              "predicate": "guessed",
+              "object": "harvests"
+            },
+            {
+              "subject": "Silk scarves",
+              "predicate": "from",
+              "object": "city streets"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "said",
+              "object": "Nelly"
+            },
+            {
+              "subject": "hand",
+              "predicate": "held",
+              "object": "sword"
+            },
+            {
+              "subject": "city-licensed escort",
+              "predicate": "from",
+              "object": "Ralien"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "crushing with",
+              "object": "leather-bound book"
+            },
+            {
+              "subject": "man",
+              "predicate": "has",
+              "object": "iron cudgel"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "saw",
+              "object": "cook fire"
+            },
+            {
+              "subject": "wood",
+              "predicate": "has",
+              "object": "iron"
+            },
+            {
+              "subject": "smith\u2019s prentice",
+              "predicate": "said",
+              "object": "innkeeper"
+            },
+            {
+              "subject": "polished horn",
+              "predicate": "from",
+              "object": "Aerueh"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "caught",
+              "object": "rotting flowers"
+            },
+            {
+              "subject": "bowl of stew",
+              "predicate": "smells of",
+              "object": "pepper"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "needs",
+              "object": "penny"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "traded",
+              "object": "coin"
+            },
+            {
+              "subject": "autumn leaves",
+              "predicate": "trailing down",
+              "object": "road"
+            },
+            {
+              "subject": "two women",
+              "predicate": "wagoneers",
+              "object": "wind"
+            },
+            {
+              "subject": "room",
+              "predicate": "has",
+              "object": "desk"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "is in",
+              "object": "room"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "opened",
+              "object": "door"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "showing",
+              "object": "smile"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "commit to",
+              "object": "memory"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "worked with",
+              "object": "wood"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "is",
+              "object": "Knife grinder"
+            },
+            {
+              "subject": "women",
+              "predicate": "flirted",
+              "object": "women"
+            },
+            {
+              "subject": "place in Imre",
+              "predicate": "is near",
+              "object": "fountain"
+            },
+            {
+              "subject": "bundled man",
+              "predicate": "wears",
+              "object": "heavy cloak"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "slashed with",
+              "object": "broken glass"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "has terms with",
+              "object": "God"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "caught",
+              "object": "woodsmoke"
+            },
+            {
+              "subject": "person",
+              "predicate": "knocked over",
+              "object": "chair"
+            },
+            {
+              "subject": "merchant",
+              "predicate": "didnt have",
+              "object": "pepper"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "closed",
+              "object": "inn"
+            },
+            {
+              "subject": "Coins",
+              "predicate": "rang",
+              "object": "bar"
+            },
+            {
+              "subject": "demon",
+              "predicate": "was being spoken",
+              "object": "demon"
+            },
+            {
+              "subject": "commander",
+              "predicate": "rode",
+              "object": "horse"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "wiped",
+              "object": "blood"
+            },
+            {
+              "subject": "Children",
+              "predicate": "begging for",
+              "object": "shims"
+            },
+            {
+              "subject": "hand",
+              "predicate": "clutching",
+              "object": "circle of iron"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "sells",
+              "object": "Writing paper"
+            },
+            {
+              "subject": "Old Cob",
+              "predicate": "is",
+              "object": "Cob"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "headed to",
+              "object": "Newarre"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "came down",
+              "object": "common room"
+            },
+            {
+              "subject": "money",
+              "predicate": "for",
+              "object": "horse"
+            },
+            {
+              "subject": "six friends",
+              "predicate": "talked about",
+              "object": "deserters"
+            },
+            {
+              "subject": "boy",
+              "predicate": "in",
+              "object": "circle"
+            },
+            {
+              "subject": "swords",
+              "predicate": "would do good against",
+              "object": "scrael"
+            },
+            {
+              "subject": "travelers",
+              "predicate": "said",
+              "object": "Kvothe"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "sat",
+              "object": "fire"
+            },
+            {
+              "subject": "man",
+              "predicate": "broke",
+              "object": "ribs"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "is",
+              "object": "teacher"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "formerly known as",
+              "object": "Devan"
+            },
+            {
+              "subject": "Crazy Martin",
+              "predicate": "digging in",
+              "object": "house"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "sold",
+              "object": "chocolate"
+            },
+            {
+              "subject": "circle of iron",
+              "predicate": "hung around",
+              "object": "neck"
+            },
+            {
+              "subject": "man",
+              "predicate": "handed",
+              "object": "firewood"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "gave up",
+              "object": "life"
+            },
+            {
+              "subject": "horse",
+              "predicate": "has",
+              "object": "harness"
+            },
+            {
+              "subject": "alchemist",
+              "predicate": "distilled",
+              "object": "sword"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "shifted in",
+              "object": "seat"
+            },
+            {
+              "subject": "grey-white metal",
+              "predicate": "shone against",
+              "object": "dark roah"
+            },
+            {
+              "subject": "man",
+              "predicate": "huddled in",
+              "object": "corner"
+            },
+            {
+              "subject": "Waystone",
+              "predicate": "contains",
+              "object": "miller"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "could have used money for",
+              "object": "horse"
+            },
+            {
+              "subject": "Orrison boy",
+              "predicate": "stopped by",
+              "object": "Caleb"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "is",
+              "object": "Kote"
+            },
+            {
+              "subject": "red-haired innkeeper",
+              "predicate": "near",
+              "object": "dark thing"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "smelled",
+              "object": "breath"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "lied to",
+              "object": "Bast"
+            },
+            {
+              "subject": "demons",
+              "predicate": "fear",
+              "object": "clean fire"
+            },
+            {
+              "subject": "horse",
+              "predicate": "small step above",
+              "object": "dray"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "is",
+              "object": "innkeeper"
+            },
+            {
+              "subject": "town",
+              "predicate": "has",
+              "object": "sword"
+            },
+            {
+              "subject": "handle",
+              "predicate": "made of",
+              "object": "wood"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "said",
+              "object": "demon"
+            },
+            {
+              "subject": "scrael",
+              "predicate": "cutting",
+              "object": "Nelly"
+            },
+            {
+              "subject": "Orissons",
+              "predicate": "kept disappearing",
+              "object": "sheep"
+            },
+            {
+              "subject": "The Mating Habits of the Common Draccus",
+              "predicate": "about",
+              "object": "dragons"
+            },
+            {
+              "subject": "red-haired man",
+              "predicate": "behind",
+              "object": "bar"
+            },
+            {
+              "subject": "wood",
+              "predicate": "is",
+              "object": "coal"
+            },
+            {
+              "subject": "Minor necessities",
+              "predicate": "brought in from",
+              "object": "wagons"
+            },
+            {
+              "subject": "bottles",
+              "predicate": "erased",
+              "object": "ache"
+            },
+            {
+              "subject": "truth",
+              "predicate": "apparent",
+              "object": "truth"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "ease",
+              "object": "Carter"
+            },
+            {
+              "subject": "worldly possessions",
+              "predicate": "are",
+              "object": "hooded cloak"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "putting in",
+              "object": "garden"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "said",
+              "object": "Scrael"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "was telling",
+              "object": "stories"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "moved",
+              "object": "money"
+            },
+            {
+              "subject": "demon",
+              "predicate": "belong in",
+              "object": "stories"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "is",
+              "object": "Kvothe"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "knows",
+              "object": "truth"
+            },
+            {
+              "subject": "shirt",
+              "predicate": "off",
+              "object": "Carter"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "clutched",
+              "object": "saddle blanket"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "looked up at",
+              "object": "Carter"
+            },
+            {
+              "subject": "demons",
+              "predicate": "fear",
+              "object": "holy name of God"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "proud of",
+              "object": "fireplace"
+            },
+            {
+              "subject": "news",
+              "predicate": "troubling",
+              "object": "men"
+            },
+            {
+              "subject": "smoke",
+              "predicate": "resembles",
+              "object": "clover"
+            },
+            {
+              "subject": "master",
+              "predicate": "like",
+              "object": "child"
+            },
+            {
+              "subject": "man",
+              "predicate": "stitched up",
+              "object": "arms"
+            },
+            {
+              "subject": "clamor",
+              "predicate": "expects from",
+              "object": "drinking house"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "on",
+              "object": "back"
+            },
+            {
+              "subject": "horse",
+              "predicate": "skittish",
+              "object": "Carter"
+            },
+            {
+              "subject": "bramble patch",
+              "predicate": "behind",
+              "object": "inn"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "watching",
+              "object": "master"
+            },
+            {
+              "subject": "demons",
+              "predicate": "sent to",
+              "object": "nameless void"
+            },
+            {
+              "subject": "third levy tax",
+              "predicate": "after",
+              "object": "harvests"
+            },
+            {
+              "subject": "Taborlin the Great",
+              "predicate": "called up",
+              "object": "lightning"
+            },
+            {
+              "subject": "chocolate",
+              "predicate": "from",
+              "object": "Tarbean"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "at",
+              "object": "Waystone"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "are not",
+              "object": "demons"
+            },
+            {
+              "subject": "smith",
+              "predicate": "fixing",
+              "object": "scythe blade\u2019s collar"
+            },
+            {
+              "subject": "soldiers",
+              "predicate": "ate",
+              "object": "beans"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "decided on",
+              "object": "road"
+            },
+            {
+              "subject": "dark shape",
+              "predicate": "thrashed",
+              "object": "bushes"
+            },
+            {
+              "subject": "inn",
+              "predicate": "has",
+              "object": "tables"
+            },
+            {
+              "subject": "figure",
+              "predicate": "held",
+              "object": "sword"
+            },
+            {
+              "subject": "inn",
+              "predicate": "different place",
+              "object": "Coins"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "held up",
+              "object": "sword"
+            },
+            {
+              "subject": "cler",
+              "predicate": "feel",
+              "object": "back of his head"
+            },
+            {
+              "subject": "group",
+              "predicate": "for",
+              "object": "protection"
+            },
+            {
+              "subject": "scribe",
+              "predicate": "tripped on",
+              "object": "ground"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "undressing",
+              "object": "bed"
+            },
+            {
+              "subject": "wood",
+              "predicate": "is",
+              "object": "glass"
+            },
+            {
+              "subject": "children\u2019s song",
+              "predicate": "mentions",
+              "object": "rowan"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "sold",
+              "object": "small bottles"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "teacher is",
+              "object": "Kote"
+            },
+            {
+              "subject": "draft horses",
+              "predicate": "hitched to",
+              "object": "wagons"
+            },
+            {
+              "subject": "iron things",
+              "predicate": "stabbing",
+              "object": "Kote"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "was",
+              "object": "city-licensed escort"
+            },
+            {
+              "subject": "Chandrian",
+              "predicate": "mentioned by",
+              "object": "Cob"
+            },
+            {
+              "subject": "hall",
+              "predicate": "leads to",
+              "object": "room"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "has",
+              "object": "wife"
+            },
+            {
+              "subject": "harvest",
+              "predicate": "approaching",
+              "object": "small towns"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "crushing",
+              "object": "walnuts"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "has",
+              "object": "daughter"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "is",
+              "object": "Pot mender"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "turned",
+              "object": "bottles"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "said",
+              "object": "Anpauen"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "returned with",
+              "object": "bucket of soapy water"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "didnt read",
+              "object": "Celum Tinture"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "helped",
+              "object": "Kote"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "expect to make it to",
+              "object": "earl\u2019s manor"
+            },
+            {
+              "subject": "walls",
+              "predicate": "in",
+              "object": "room"
+            },
+            {
+              "subject": "innkeep",
+              "predicate": "pulled",
+              "object": "Old Cob"
+            },
+            {
+              "subject": "shoulders",
+              "predicate": "dark and wet with",
+              "object": "blood"
+            },
+            {
+              "subject": "wood",
+              "predicate": "filled",
+              "object": "room"
+            },
+            {
+              "subject": "road",
+              "predicate": "to",
+              "object": "Tinu\u00eb"
+            },
+            {
+              "subject": "saddle blanket",
+              "predicate": "dropped onto",
+              "object": "table"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "safe from",
+              "object": "Demons"
+            },
+            {
+              "subject": "wooden floor",
+              "predicate": "in",
+              "object": "room"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "looked around",
+              "object": "room"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "walked to",
+              "object": "bed"
+            },
+            {
+              "subject": "wind",
+              "predicate": "bore",
+              "object": "Taborlin"
+            },
+            {
+              "subject": "autumn days",
+              "predicate": "rare in",
+              "object": "real world"
+            },
+            {
+              "subject": "tinker",
+              "predicate": "showing",
+              "object": "teeth"
+            },
+            {
+              "subject": "trees",
+              "predicate": "contains",
+              "object": "black shapes"
+            },
+            {
+              "subject": "bucket",
+              "predicate": "contains",
+              "object": "water"
+            },
+            {
+              "subject": "room",
+              "predicate": "has",
+              "object": "fireplace"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "is at",
+              "object": "bar"
+            },
+            {
+              "subject": "worldly possessions",
+              "predicate": "are",
+              "object": "travelsack"
+            },
+            {
+              "subject": "red light",
+              "predicate": "traced",
+              "object": "back"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "is",
+              "object": "man"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "stared at",
+              "object": "object"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "gestured toward",
+              "object": "fireplace"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "recommended",
+              "object": "hangover cures"
+            },
+            {
+              "subject": "oldest son",
+              "predicate": "fighting",
+              "object": "rebels"
+            },
+            {
+              "subject": "inn",
+              "predicate": "has",
+              "object": "windows"
+            },
+            {
+              "subject": "commander",
+              "predicate": "gives",
+              "object": "men"
+            },
+            {
+              "subject": "Taborlin",
+              "predicate": "met",
+              "object": "tinker"
+            },
+            {
+              "subject": "Carter",
+              "predicate": "disrupted",
+              "object": "news"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "dally with",
+              "object": "Earl of Baedn-Bryt"
+            },
+            {
+              "subject": "blacksmith",
+              "predicate": "doing",
+              "object": "business"
+            },
+            {
+              "subject": "Bast",
+              "predicate": "closed",
+              "object": "door"
+            },
+            {
+              "subject": "bundle of coins",
+              "predicate": "stuffed into",
+              "object": "toe"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "searched in",
+              "object": "Abbott\u2019s Ford"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "stepped into",
+              "object": "fire"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "met up with",
+              "object": "Treya"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "met up with",
+              "object": "Skarpi"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "hit",
+              "object": "stone wall"
+            },
+            {
+              "subject": "Demons",
+              "predicate": "are",
+              "object": "spiders"
+            },
+            {
+              "subject": "innkeep",
+              "predicate": "pulled",
+              "object": "Jake"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "is",
+              "object": "Willow-wand water-finder"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "sells",
+              "object": "Silk scarves"
+            },
+            {
+              "subject": "man",
+              "predicate": "drew",
+              "object": "hood"
+            },
+            {
+              "subject": "rebels",
+              "predicate": "in",
+              "object": "Menat"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "held",
+              "object": "sword"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "took in",
+              "object": "bar"
+            },
+            {
+              "subject": "man",
+              "predicate": "had",
+              "object": "true-red hair"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "traveling from",
+              "object": "Purvis"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "found",
+              "object": "man"
+            },
+            {
+              "subject": "purse",
+              "predicate": "contains",
+              "object": "coins"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "whisked",
+              "object": "coins"
+            },
+            {
+              "subject": "inn\u2019s sign",
+              "predicate": "creaking on",
+              "object": "hooks"
+            },
+            {
+              "subject": "travelers",
+              "predicate": "left",
+              "object": "Purvis"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "thinking of tearing up",
+              "object": "bramble patch"
+            },
+            {
+              "subject": "Crazy Martin",
+              "predicate": "digging",
+              "object": "well"
+            },
+            {
+              "subject": "Cheese",
+              "predicate": "set on",
+              "object": "platters"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "has",
+              "object": "livelihood"
+            },
+            {
+              "subject": "Celum Tinture",
+              "predicate": "contains",
+              "object": "Chapter thirteen"
+            },
+            {
+              "subject": "officer",
+              "predicate": "laying out",
+              "object": "worldly possessions"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "moved",
+              "object": "bundle of coins"
+            },
+            {
+              "subject": "Tinker",
+              "predicate": "is",
+              "object": "Motherleaf"
+            },
+            {
+              "subject": "innkeepers",
+              "predicate": "use",
+              "object": "drunks"
+            },
+            {
+              "subject": "bone needle",
+              "predicate": "threaded with",
+              "object": "gut"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "saw",
+              "object": "Bast"
+            },
+            {
+              "subject": "Witkins",
+              "predicate": "has",
+              "object": "tinderbox"
+            },
+            {
+              "subject": "flame",
+              "predicate": "revealed",
+              "object": "scars"
+            },
+            {
+              "subject": "red light",
+              "predicate": "traced",
+              "object": "arms"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "abjure",
+              "object": "earth"
+            },
+            {
+              "subject": "man",
+              "predicate": "wearing",
+              "object": "hood"
+            },
+            {
+              "subject": "innkeeper",
+              "predicate": "turned",
+              "object": "innkeeper"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "pouring",
+              "object": "drinks"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "abjure",
+              "object": "stone"
+            },
+            {
+              "subject": "horse",
+              "predicate": "has",
+              "object": "teeth"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "robbed off by",
+              "object": "Abbot\u2019s Ford"
+            },
+            {
+              "subject": "books",
+              "predicate": "found",
+              "object": "sunshine"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "ate",
+              "object": "food"
+            },
+            {
+              "subject": "hair",
+              "predicate": "is",
+              "object": "red-haired man"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "dipped",
+              "object": "cup"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "threw",
+              "object": "fire"
+            },
+            {
+              "subject": "bundled man",
+              "predicate": "wears",
+              "object": "gloves"
+            },
+            {
+              "subject": "wind",
+              "predicate": "would have sighed through",
+              "object": "trees"
+            },
+            {
+              "subject": "man",
+              "predicate": "had",
+              "object": "eyes"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "topped off",
+              "object": "lamps"
+            },
+            {
+              "subject": "life",
+              "predicate": "on",
+              "object": "road"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "said",
+              "object": "Skarpi"
+            },
+            {
+              "subject": "amulet",
+              "predicate": "worth",
+              "object": "copper penny"
+            },
+            {
+              "subject": "officer",
+              "predicate": "went through",
+              "object": "saddlebags"
+            },
+            {
+              "subject": "Chronicler",
+              "predicate": "found",
+              "object": "lizard"
+            },
+            {
+              "subject": "leader",
+              "predicate": "take off",
+              "object": "hobbyhorse"
+            },
+            {
+              "subject": "wind",
+              "predicate": "way",
+              "object": "tinder"
+            },
+            {
+              "subject": "Graham",
+              "predicate": "took to",
+              "object": "smithy"
+            },
+            {
+              "subject": "room",
+              "predicate": "has",
+              "object": "chest"
+            },
+            {
+              "subject": "Kote",
+              "predicate": "took",
+              "object": "arrow"
+            },
+            {
+              "subject": "coals",
+              "predicate": "glowing",
+              "object": "fire"
+            },
+            {
+              "subject": "coats",
+              "predicate": "over",
+              "object": "chairs"
+            },
+            {
+              "subject": "Waystone",
+              "predicate": "contains",
+              "object": "sword"
+            },
+            {
+              "subject": "Sleep",
+              "predicate": "met",
+              "object": "lover"
+            }
+          ],
+          "edges": [
+            "set on",
+            "common in",
+            "sent",
+            "digging in",
+            "creaking on",
+            "take off",
+            "off",
+            "looked up at",
+            "leads to",
+            "mentioned by",
+            "name is",
+            "small step above",
+            "set up",
+            "leave",
+            "sent to",
+            "is a",
+            "on way through",
+            "walked down",
+            "was on",
+            "at",
+            "injured",
+            "jumped out of",
+            "abjure",
+            "made",
+            "was under",
+            "worked with",
+            "filled",
+            "said about",
+            "searched for",
+            "is near",
+            "searched in",
+            "ensured",
+            "came through",
+            "in",
+            "name",
+            "corrected to",
+            "chanted",
+            "caught",
+            "swollen",
+            "robbed off by",
+            "setting",
+            "thrashed",
+            "over",
+            "made of",
+            "glittering",
+            "ease",
+            "sat behind",
+            "took",
+            "hangs from",
+            "onto",
+            "shape",
+            "shuttered",
+            "bought",
+            "smells of",
+            "of",
+            "closing",
+            "dally with",
+            "repacked",
+            "swept",
+            "has",
+            "turned to",
+            "heavy as",
+            "puzzled",
+            "order",
+            "tripped on",
+            "hitched to",
+            "whisked",
+            "set",
+            "puts",
+            "revealed",
+            "smelled of",
+            "levered himself up onto",
+            "is friend of",
+            "unbuckled",
+            "contains",
+            "would go through",
+            "removed",
+            "thick on",
+            "kept disappearing",
+            "calls",
+            "holding",
+            "was",
+            "cracked",
+            "turned",
+            "seen",
+            "sitting in",
+            "good for",
+            "learns from",
+            "rubbing along",
+            "came after",
+            "took in",
+            "hidden in",
+            "was in",
+            "have",
+            "uses",
+            "produced",
+            "drew",
+            "flicked",
+            "picked up",
+            "cooled",
+            "belong to",
+            "hangs off",
+            "burned and buried",
+            "gave",
+            "paid",
+            "kindle",
+            "watched",
+            "scowling down into",
+            "said",
+            "on",
+            "closed",
+            "thought",
+            "visit",
+            "teach",
+            "stabbing",
+            "reached into",
+            "paging through",
+            "brought in from",
+            "prized by",
+            "pulled",
+            "has terms with",
+            "building up",
+            "smooth",
+            "watching",
+            "pushed back",
+            "headed to",
+            "tapped",
+            "is against",
+            "attacked",
+            "undressing",
+            "creaking",
+            "is at",
+            "found",
+            "smelling of",
+            "was being spoken",
+            "are",
+            "abandoned",
+            "could have used money for",
+            "through",
+            "dark and wet with",
+            "spat",
+            "encouraged",
+            "putting in",
+            "lit",
+            "steer",
+            "knelt at",
+            "feels",
+            "hit",
+            "called",
+            "thinking of tearing up",
+            "brushed back",
+            "heading to",
+            "dropped",
+            "rekindling",
+            "helped",
+            "from",
+            "knows",
+            "related to",
+            "poured into",
+            "stood on",
+            "predicted",
+            "left",
+            "scuttling on",
+            "brushed",
+            "bore",
+            "saw light through",
+            "ate",
+            "worth",
+            "brought bowl to",
+            "sing",
+            "nodded towards",
+            "previous",
+            "hear in",
+            "make",
+            "way into",
+            "dickered",
+            "topped off",
+            "nestled between",
+            "obeyed",
+            "schedule delay near",
+            "protect",
+            "pointed out",
+            "rushed into",
+            "gave money to",
+            "owns",
+            "made it back to",
+            "stood",
+            "needs",
+            "wears",
+            "glanced into",
+            "shared dinner with",
+            "asked by",
+            "used",
+            "appointment with",
+            "spotted",
+            "atop",
+            "crushing with",
+            "touched",
+            "corrected",
+            "has part",
+            "plans to put in",
+            "crushing",
+            "getting worse",
+            "sold",
+            "waving",
+            "to",
+            "asked",
+            "in front of",
+            "cut",
+            "call",
+            "met up with",
+            "replied",
+            "knocked against",
+            "refuse",
+            "knew name of",
+            "not a place for",
+            "speaks",
+            "hung",
+            "called up",
+            "sold amulet to",
+            "slashed with",
+            "asked about",
+            "walked",
+            "walked to",
+            "asking price for",
+            "bring",
+            "standing on",
+            "apparent",
+            "expresses",
+            "decorated with",
+            "wearing",
+            "got on",
+            "gestured toward",
+            "listens to",
+            "would do good against",
+            "see",
+            "near",
+            "formerly known as",
+            "put",
+            "huddled at",
+            "trusts",
+            "looks at",
+            "way",
+            "suit",
+            "tends",
+            "didnt read",
+            "different place",
+            "might notice",
+            "was not",
+            "smelled",
+            "disrupted",
+            "paint",
+            "made sure",
+            "does",
+            "is in",
+            "explaining",
+            "traded",
+            "kills",
+            "hold",
+            "wagoneers",
+            "used for",
+            "checking",
+            "came to",
+            "resembles",
+            "recommended",
+            "threaded",
+            "took to",
+            "told story to",
+            "was telling",
+            "behind",
+            "huddled in",
+            "gleamed in",
+            "peel away",
+            "slung",
+            "bundled up for",
+            "traced",
+            "held up",
+            "should have bought",
+            "fighting",
+            "decided on",
+            "was proud of",
+            "underfoot",
+            "settled outside",
+            "came",
+            "laughed at",
+            "clapped",
+            "distilled",
+            "broke",
+            "waiting to",
+            "lost",
+            "wears around",
+            "led",
+            "read",
+            "making",
+            "would have sighed through",
+            "looked over",
+            "lifted",
+            "pressed ahead",
+            "was farther than",
+            "was looking for",
+            "red as",
+            "ideal for ripening",
+            "appointment location",
+            "to be",
+            "fear",
+            "shook",
+            "cooking in",
+            "stay alive",
+            "heard of",
+            "size",
+            "told",
+            "wiped",
+            "fell",
+            "stopped by",
+            "teacher is",
+            "inside",
+            "said to",
+            "put hand over",
+            "mentions",
+            "happened",
+            "troubling",
+            "poked",
+            "trailing down",
+            "blundering through",
+            "hook up with",
+            "threaded with",
+            "stepped into",
+            "on sides of",
+            "called for",
+            "pounded",
+            "walked through",
+            "turned eyes to",
+            "is as large as",
+            "interviewed",
+            "requested",
+            "taken to",
+            "struck",
+            "warming",
+            "feel",
+            "after",
+            "opened",
+            "digging",
+            "daubed",
+            "entered",
+            "followed",
+            "clutching",
+            "handed",
+            "destroys",
+            "backed into",
+            "with",
+            "sells",
+            "for",
+            "like",
+            "moved like",
+            "lives at",
+            "rang",
+            "told story about",
+            "dropped to grate against",
+            "use",
+            "bad",
+            "dipped",
+            "asks about",
+            "talked about",
+            "started",
+            "eye",
+            "covered in",
+            "smeared with",
+            "safe from",
+            "gives",
+            "rode",
+            "are in",
+            "looking in",
+            "sat",
+            "washed",
+            "tricked",
+            "rare in",
+            "ready with",
+            "showing",
+            "knew",
+            "knocked over",
+            "without",
+            "lowered",
+            "belong in",
+            "is not",
+            "carrying",
+            "brought",
+            "went to",
+            "barring",
+            "commit to",
+            "begging for",
+            "are not",
+            "rubbed at",
+            "complained about",
+            "cutting",
+            "gave up",
+            "into",
+            "wash in",
+            "skittish",
+            "finished",
+            "formed",
+            "is",
+            "costs",
+            "held",
+            "not used in",
+            "eyed",
+            "about",
+            "jumped off",
+            "grind",
+            "pushed through",
+            "struck by",
+            "tended to",
+            "hid",
+            "polish",
+            "wants",
+            "emptied",
+            "chose",
+            "reluctant to give up",
+            "looked around",
+            "didnt have",
+            "clung",
+            "erased",
+            "planted",
+            "baked into",
+            "stitched up",
+            "shouldered",
+            "hanging over",
+            "met",
+            "taught by",
+            "traveling from",
+            "wash",
+            "subject of story told by",
+            "hung around",
+            "enters",
+            "wore",
+            "commanded",
+            "guessed",
+            "beneath",
+            "sank into",
+            "are like",
+            "twisted",
+            "proud of",
+            "looked at",
+            "resting",
+            "came down",
+            "fought",
+            "fell on",
+            "expects from",
+            "called himself",
+            "attacked by",
+            "roaring in",
+            "is made of",
+            "went through",
+            "having a difficult time with",
+            "locking",
+            "shifted in",
+            "paying for",
+            "laid",
+            "expect to make it to",
+            "simmer",
+            "threw",
+            "shone against",
+            "across",
+            "returned with",
+            "part of",
+            "attached to",
+            "doing",
+            "dropped onto",
+            "hides",
+            "pouring",
+            "stuffed into",
+            "laying out",
+            "laughing",
+            "pressed",
+            "traveling with",
+            "fell across",
+            "looked out",
+            "clutched",
+            "moved",
+            "approaching",
+            "killed",
+            "encroaching on",
+            "put into",
+            "leaned",
+            "fixing",
+            "jabbed",
+            "locked",
+            "came from",
+            "has appointment with",
+            "upended onto",
+            "goes through",
+            "looking for",
+            "had",
+            "lied to",
+            "saw",
+            "flirted",
+            "stared at",
+            "glowing",
+            "stepped from"
+          ],
+          "entity_count": 727,
+          "relation_count": 926,
+          "edge_count": 498
+        },
+        "post_dedup": {
+          "entity_count": 604,
+          "relation_count": 924,
+          "edge_count": 424,
+          "deduplication_ratios": {
+            "entities": 0.8308115543328748,
+            "relations": 0.9978401727861771,
+            "edges": 0.8514056224899599
+          }
+        }
+      },
+      "corpus_sample": "\nPROLOGUE\n\nA Silence of Three Parts\n\nIT WAS NIGHT AGAIN. The Waystone Inn lay in silence, and it was a silence of three parts.\n\nThe most obvious part was a hollow, echoing quiet, made by things that w...",
+      "corpus_file": "corpus_texts/corpus_100000_chars.txt",
+      "total_metrics": {
+        "prompt_tokens": 575517,
+        "completion_tokens": 102797,
+        "total_tokens": 678314,
+        "total_cost": 0.10203119999999997,
+        "total_time": 113.7553060054779,
+        "final_entity_count": 727,
+        "final_relation_count": 926,
+        "final_edge_count": 498
+      }
+    }
+  }
+}

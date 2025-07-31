@@ -1,0 +1,14 @@
+{
+  "experiment_info": {
+    "corpus_size": 100000,
+    "corpus_length": 100000,
+    "model": "gemini/gemini-2.0-flash",
+    "timestamp": "2025-07-28 14:51:44"
+  },
+  "corpus_sample": "\nPROLOGUE\n\nA Silence of Three Parts\n\nIT WAS NIGHT AGAIN. The Waystone Inn lay in silence, and it was a silence of three parts.\n\nThe most obvious part was a hollow, echoing quiet, made by things that w...",
+  "metrics": {
+    "total_cost": 0.10203119999999997,
+    "total_time": 113.7553060054779,
+    "total_tokens": 678314
+  }
+}

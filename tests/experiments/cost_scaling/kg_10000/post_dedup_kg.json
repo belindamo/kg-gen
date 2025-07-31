@@ -1,0 +1,946 @@
+{
+  "entities": [
+    "wind",
+    "door",
+    "boy",
+    "inn",
+    "stools",
+    "Kote",
+    "Waystone Inn",
+    "table",
+    "God",
+    "grain",
+    "news",
+    "Waystone",
+    "mad dogs",
+    "bar",
+    "bandits",
+    "blood",
+    "innkeeper",
+    "wall",
+    "corner of the bar",
+    "trees",
+    "lamplight",
+    "Taborlin",
+    "Rannish",
+    "shirt",
+    "chest",
+    "sky",
+    "river-smooth stone",
+    "laughter",
+    "hands",
+    "Jake",
+    "conversation",
+    "demons",
+    "body",
+    "cuts",
+    "red",
+    "eyes",
+    "silver penny",
+    "amulet",
+    "saddle blanket",
+    "Cendling night",
+    "fire",
+    "tinker",
+    "Shep",
+    "Chandrian",
+    "iron penny",
+    "crowd",
+    "Carter",
+    "inn\u2019s sign",
+    "stone hearth",
+    "road",
+    "Cob",
+    "friends",
+    "hooks",
+    "clothes",
+    "front door",
+    "Tehlu",
+    "dog",
+    "mahogany",
+    "copper penny",
+    "true-red hair",
+    "chair",
+    "Graham",
+    "barrels",
+    "Jacob Walker",
+    "clamor",
+    "face",
+    "horse",
+    "common room",
+    "men",
+    "floor",
+    "autumn leaves",
+    "farm",
+    "clatter",
+    "wood",
+    "smith\u2019s prentice",
+    "stones",
+    "drinking house",
+    "linen cloth"
+  ],
+  "edges": [
+    "from",
+    "inside",
+    "tried to ease",
+    "jumped off",
+    "entered",
+    "waiting to",
+    "has",
+    "stained",
+    "heavy as",
+    "expects from",
+    "rubbing along",
+    "listens to",
+    "said to",
+    "happened",
+    "troubling",
+    "creaking on",
+    "would have sighed through",
+    "bore",
+    "trailing down",
+    "mentioned by",
+    "huddled at",
+    "worth",
+    "like",
+    "threatened by",
+    "told story about",
+    "are",
+    "are not",
+    "knocked against",
+    "refuse",
+    "behind",
+    "red as",
+    "gleamed in",
+    "met",
+    "knew name of",
+    "at",
+    "dropped on",
+    "said",
+    "obeyed",
+    "had",
+    "entered through",
+    "sold amulet to",
+    "protect",
+    "banged",
+    "of",
+    "fell",
+    "saw",
+    "underfoot",
+    "safe from",
+    "sit on",
+    "commanded",
+    "held",
+    "different from",
+    "pulled",
+    "attached to",
+    "was",
+    "smeared with",
+    "shared dinner with"
+  ],
+  "relations": [
+    [
+      "friends",
+      "jumped off",
+      "stools"
+    ],
+    [
+      "Shep",
+      "listens to",
+      "Cob"
+    ],
+    [
+      "Taborlin",
+      "threatened by",
+      "bandits"
+    ],
+    [
+      "Chandrian",
+      "are",
+      "men"
+    ],
+    [
+      "tinker",
+      "sold amulet to",
+      "Taborlin"
+    ],
+    [
+      "amulet",
+      "protect",
+      "Taborlin"
+    ],
+    [
+      "men",
+      "had",
+      "eyes"
+    ],
+    [
+      "Taborlin",
+      "safe from",
+      "demons"
+    ],
+    [
+      "Chandrian",
+      "refuse",
+      "Tehlu"
+    ],
+    [
+      "saddle blanket",
+      "attached to",
+      "chest"
+    ],
+    [
+      "Taborlin",
+      "fell",
+      "sky"
+    ],
+    [
+      "Chandrian",
+      "are",
+      "demons"
+    ],
+    [
+      "Chandrian",
+      "mentioned by",
+      "Cob"
+    ],
+    [
+      "Graham",
+      "listens to",
+      "Cob"
+    ],
+    [
+      "eyes",
+      "like",
+      "horse"
+    ],
+    [
+      "inn\u2019s sign",
+      "creaking on",
+      "hooks"
+    ],
+    [
+      "autumn leaves",
+      "trailing down",
+      "road"
+    ],
+    [
+      "Taborlin",
+      "shared dinner with",
+      "tinker"
+    ],
+    [
+      "men",
+      "waiting to",
+      "men"
+    ],
+    [
+      "shirt",
+      "stained",
+      "red"
+    ],
+    [
+      "saddle blanket",
+      "knocked against",
+      "wood"
+    ],
+    [
+      "Taborlin",
+      "commanded",
+      "stones"
+    ],
+    [
+      "Jake",
+      "said",
+      "boy"
+    ],
+    [
+      "Carter",
+      "entered through",
+      "door"
+    ],
+    [
+      "saddle blanket",
+      "smeared with",
+      "stones"
+    ],
+    [
+      "Carter",
+      "entered",
+      "common room"
+    ],
+    [
+      "farm",
+      "happened",
+      "Cendling night"
+    ],
+    [
+      "mahogany",
+      "gleamed in",
+      "lamplight"
+    ],
+    [
+      "front door",
+      "banged",
+      "door"
+    ],
+    [
+      "hands",
+      "of",
+      "men"
+    ],
+    [
+      "Taborlin",
+      "saw",
+      "sky"
+    ],
+    [
+      "Graham",
+      "tried to ease",
+      "Carter"
+    ],
+    [
+      "Taborlin",
+      "told story about",
+      "Cob"
+    ],
+    [
+      "floor",
+      "underfoot",
+      "floor"
+    ],
+    [
+      "barrels",
+      "behind",
+      "bar"
+    ],
+    [
+      "men",
+      "had",
+      "true-red hair"
+    ],
+    [
+      "Cob",
+      "told story about",
+      "Taborlin"
+    ],
+    [
+      "innkeeper",
+      "pulled",
+      "Shep"
+    ],
+    [
+      "Waystone",
+      "was",
+      "Waystone"
+    ],
+    [
+      "Jake",
+      "said to",
+      "Cob"
+    ],
+    [
+      "stone hearth",
+      "held",
+      "fire"
+    ],
+    [
+      "Graham",
+      "said to",
+      "Jake"
+    ],
+    [
+      "Taborlin",
+      "threatened by",
+      "horse"
+    ],
+    [
+      "wind",
+      "bore",
+      "Taborlin"
+    ],
+    [
+      "innkeeper",
+      "pulled",
+      "Jake"
+    ],
+    [
+      "smith\u2019s prentice",
+      "from",
+      "Rannish"
+    ],
+    [
+      "clothes",
+      "smeared with",
+      "cuts"
+    ],
+    [
+      "Carter",
+      "clutched",
+      "saddle blanket"
+    ],
+    [
+      "news",
+      "troubling",
+      "men"
+    ],
+    [
+      "clatter",
+      "expects from",
+      "drinking house"
+    ],
+    [
+      "men",
+      "inside",
+      "inn"
+    ],
+    [
+      "saddle blanket",
+      "dropped on",
+      "table"
+    ],
+    [
+      "amulet",
+      "worth",
+      "iron penny"
+    ],
+    [
+      "clamor",
+      "expects from",
+      "drinking house"
+    ],
+    [
+      "river-smooth stone",
+      "heavy as",
+      "river-smooth stone"
+    ],
+    [
+      "linen cloth",
+      "rubbing along",
+      "grain"
+    ],
+    [
+      "face",
+      "smeared with",
+      "blood"
+    ],
+    [
+      "Jake",
+      "listens to",
+      "Cob"
+    ],
+    [
+      "demons",
+      "different from",
+      "dog"
+    ],
+    [
+      "men",
+      "huddled at",
+      "corner of the bar"
+    ],
+    [
+      "wind",
+      "would have sighed through",
+      "trees"
+    ],
+    [
+      "true-red hair",
+      "red as",
+      "fire"
+    ],
+    [
+      "Carter",
+      "sit on",
+      "chair"
+    ],
+    [
+      "amulet",
+      "worth",
+      "copper penny"
+    ],
+    [
+      "Waystone Inn",
+      "has",
+      "Cob"
+    ],
+    [
+      "Taborlin",
+      "met",
+      "tinker"
+    ],
+    [
+      "linen cloth",
+      "rubbing along",
+      "bar"
+    ],
+    [
+      "wind",
+      "obeyed",
+      "Taborlin"
+    ],
+    [
+      "Kote",
+      "at",
+      "Waystone"
+    ],
+    [
+      "Chandrian",
+      "are not",
+      "demons"
+    ],
+    [
+      "amulet",
+      "worth",
+      "silver penny"
+    ],
+    [
+      "Taborlin",
+      "threatened by",
+      "mad dogs"
+    ],
+    [
+      "Taborlin",
+      "knew name of",
+      "wind"
+    ],
+    [
+      "shirt",
+      "attached to",
+      "body"
+    ],
+    [
+      "innkeeper",
+      "pulled",
+      "Cob"
+    ]
+  ],
+  "entity_clusters": {
+    "linen cloth": [
+      "linen cloth"
+    ],
+    "drinking house": [
+      "drinking house"
+    ],
+    "stones": [
+      "stones",
+      "stone"
+    ],
+    "smith\u2019s prentice": [
+      "smith\u2019s prentice"
+    ],
+    "wood": [
+      "wood"
+    ],
+    "clatter": [
+      "clatter"
+    ],
+    "farm": [
+      "farm"
+    ],
+    "floor": [
+      "floor"
+    ],
+    "autumn leaves": [
+      "autumn leaves"
+    ],
+    "men": [
+      "men",
+      "man"
+    ],
+    "common room": [
+      "common room"
+    ],
+    "horse": [
+      "horse"
+    ],
+    "face": [
+      "face"
+    ],
+    "clamor": [
+      "clamor"
+    ],
+    "Jacob Walker": [
+      "Jacob Walker"
+    ],
+    "barrels": [
+      "barrels"
+    ],
+    "chair": [
+      "chair"
+    ],
+    "Graham": [
+      "Graham"
+    ],
+    "true-red hair": [
+      "true-red hair"
+    ],
+    "Cob": [
+      "Old Cob",
+      "Cob"
+    ],
+    "copper penny": [
+      "copper penny"
+    ],
+    "dog": [
+      "dog"
+    ],
+    "mahogany": [
+      "mahogany"
+    ],
+    "Tehlu": [
+      "Tehlu"
+    ],
+    "front door": [
+      "front door"
+    ],
+    "clothes": [
+      "clothes"
+    ],
+    "hooks": [
+      "hooks"
+    ],
+    "friends": [
+      "friends"
+    ],
+    "road": [
+      "road"
+    ],
+    "stone hearth": [
+      "stone hearth"
+    ],
+    "inn\u2019s sign": [
+      "inn\u2019s sign"
+    ],
+    "Carter": [
+      "Carter"
+    ],
+    "crowd": [
+      "crowd"
+    ],
+    "iron penny": [
+      "iron penny"
+    ],
+    "Chandrian": [
+      "Chandrian"
+    ],
+    "Shep": [
+      "Shep"
+    ],
+    "tinker": [
+      "tinker"
+    ],
+    "demons": [
+      "Demons",
+      "spirits",
+      "demons",
+      "demon"
+    ],
+    "fire": [
+      "heat",
+      "flame",
+      "fire"
+    ],
+    "saddle blanket": [
+      "saddle blanket"
+    ],
+    "Cendling night": [
+      "Cendling night",
+      "night"
+    ],
+    "innkeeper": [
+      "innkeeper",
+      "innkeep"
+    ],
+    "amulet": [
+      "amulet"
+    ],
+    "silver penny": [
+      "silver penny"
+    ],
+    "eyes": [
+      "eyes"
+    ],
+    "red": [
+      "red"
+    ],
+    "cuts": [
+      "cuts"
+    ],
+    "body": [
+      "body"
+    ],
+    "conversation": [
+      "conversation"
+    ],
+    "Jake": [
+      "Jake"
+    ],
+    "boy": [
+      "boy",
+      "Boy"
+    ],
+    "hands": [
+      "hands"
+    ],
+    "laughter": [
+      "laughter"
+    ],
+    "river-smooth stone": [
+      "river-smooth stone"
+    ],
+    "sky": [
+      "sky"
+    ],
+    "chest": [
+      "chest"
+    ],
+    "shirt": [
+      "shirt"
+    ],
+    "Rannish": [
+      "Rannish"
+    ],
+    "Taborlin": [
+      "Taborlin",
+      "Taborlin the Great"
+    ],
+    "lamplight": [
+      "lamplight"
+    ],
+    "trees": [
+      "trees"
+    ],
+    "corner of the bar": [
+      "corner of the bar"
+    ],
+    "wall": [
+      "wall"
+    ],
+    "blood": [
+      "blood"
+    ],
+    "mad dogs": [
+      "mad dogs"
+    ],
+    "bar": [
+      "bar"
+    ],
+    "bandits": [
+      "bandits"
+    ],
+    "news": [
+      "news"
+    ],
+    "Waystone": [
+      "Waystone"
+    ],
+    "grain": [
+      "grain"
+    ],
+    "God": [
+      "God"
+    ],
+    "table": [
+      "table"
+    ],
+    "Waystone Inn": [
+      "Waystone Inn"
+    ],
+    "Kote": [
+      "Kote"
+    ],
+    "stools": [
+      "stools"
+    ],
+    "inn": [
+      "inn"
+    ],
+    "door": [
+      "door"
+    ],
+    "wind": [
+      "wind"
+    ]
+  },
+  "edge_clusters": {
+    "shared dinner with": [
+      "shared dinner with"
+    ],
+    "commanded": [
+      "commanded"
+    ],
+    "different from": [
+      "different from"
+    ],
+    "safe from": [
+      "safe from"
+    ],
+    "pulled": [
+      "pulled"
+    ],
+    "attached to": [
+      "attached to",
+      "stuck to"
+    ],
+    "sit on": [
+      "sit on"
+    ],
+    "held": [
+      "held"
+    ],
+    "was": [
+      "was"
+    ],
+    "smeared with": [
+      "smeared with",
+      "covered with",
+      "full of"
+    ],
+    "underfoot": [
+      "underfoot"
+    ],
+    "saw": [
+      "saw"
+    ],
+    "fell": [
+      "fell"
+    ],
+    "of": [
+      "of"
+    ],
+    "banged": [
+      "banged"
+    ],
+    "protect": [
+      "protect"
+    ],
+    "sold amulet to": [
+      "sold amulet to"
+    ],
+    "told story about": [
+      "subject of story told by",
+      "told story about"
+    ],
+    "entered through": [
+      "entered through"
+    ],
+    "had": [
+      "had"
+    ],
+    "obeyed": [
+      "obeyed"
+    ],
+    "said": [
+      "said"
+    ],
+    "knew name of": [
+      "knew name of"
+    ],
+    "dropped on": [
+      "dropped on"
+    ],
+    "met": [
+      "met"
+    ],
+    "at": [
+      "at"
+    ],
+    "gleamed in": [
+      "gleamed in"
+    ],
+    "behind": [
+      "behind"
+    ],
+    "red as": [
+      "red as"
+    ],
+    "refuse": [
+      "refuse"
+    ],
+    "knocked against": [
+      "knocked against"
+    ],
+    "are not": [
+      "are not"
+    ],
+    "are": [
+      "are"
+    ],
+    "threatened by": [
+      "threatened by"
+    ],
+    "like": [
+      "like"
+    ],
+    "huddled at": [
+      "huddled at"
+    ],
+    "worth": [
+      "worth"
+    ],
+    "bore": [
+      "bore"
+    ],
+    "trailing down": [
+      "trailing down"
+    ],
+    "mentioned by": [
+      "mentioned by"
+    ],
+    "would have sighed through": [
+      "would have sighed through"
+    ],
+    "creaking on": [
+      "creaking on"
+    ],
+    "clutched": [
+      "clutched"
+    ],
+    "troubling": [
+      "troubling"
+    ],
+    "happened": [
+      "happened"
+    ],
+    "heavy as": [
+      "heavy as"
+    ],
+    "listens to": [
+      "listens to"
+    ],
+    "expects from": [
+      "expects from"
+    ],
+    "stained": [
+      "stained"
+    ],
+    "rubbing along": [
+      "rubbing along"
+    ],
+    "said to": [
+      "said to"
+    ],
+    "has": [
+      "has"
+    ],
+    "waiting to": [
+      "waiting to"
+    ],
+    "entered": [
+      "entered"
+    ],
+    "jumped off": [
+      "jumped off"
+    ],
+    "tried to ease": [
+      "tried to ease"
+    ],
+    "inside": [
+      "inside"
+    ],
+    "from": [
+      "from"
+    ]
+  }
+}
